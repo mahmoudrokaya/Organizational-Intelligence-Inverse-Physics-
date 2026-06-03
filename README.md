@@ -17,18 +17,18 @@ The framework is evaluated on propagation-field inverse reconstruction tasks gen
 ```text
 organizational-intelligence-inverse-physics/
 │
-├── src/
-├── scripts/
-├── configs/
-├── data/
-├── results/
-├── docs/
+├── src/                  # Source code
+├── configs/              # Experiment configurations
+├── data/                 # Data instructions and sample files
+├── results/              # Experimental outputs and figures
+├── docs/                 # Reproducibility documentation
 │
 ├── README.md
 ├── requirements.txt
 ├── environment.yml
+├── CITATION.cff
 ├── LICENSE
-└── CITATION.cff
+└── .gitignore
 ```
 
 ---
