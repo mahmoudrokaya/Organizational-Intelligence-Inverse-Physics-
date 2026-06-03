@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the metadata below."
+
+title: "Organizational Intelligence for Real-Time Inverse Physics Problems in Positioning Systems"
+
+type: software
+
+authors:
+  - family-names: "Rokaya"
+    given-names: "Mahmoud"
+    affiliation: "College of Computers and Information Technology, Taif University, Saudi Arabia"
+    orcid: "https://orcid.org/0000-0002-7034-6310"
+
+repository-code: "https://github.com/mahmoudrokaya/Organizational-Intelligence-Inverse-Physics-"
+
+url: "https://github.com/mahmoudrokaya/Organizational-Intelligence-Inverse-Physics-"
+
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20520585"
+
+abstract: >
+  A distributed organizational intelligence framework for solving
+  real-time inverse physics problems in positioning systems using
+  adaptive cooperative computational units, physics-aware learning,
+  organizational adaptation, and decentralized reconstruction.
+
+keywords:
+  - organizational intelligence
+  - inverse physics
+  - positioning systems
+  - distributed learning
+  - scientific machine learning
+  - physics-aware learning
+  - real-time reconstruction
+
+license: MIT
+
+version: "1.0.0"
+
+date-released: 2026-06-03
+
+preferred-citation:
+  type: software
+  authors:
+    - family-names: "Rokaya"
+      given-names: "Mahmoud"
+  title: "Organizational Intelligence for Real-Time Inverse Physics Problems in Positioning Systems"
+  version: "1.0.0"
+  doi: "10.5281/zenodo.20520585"
+  url: "https://github.com/mahmoudrokaya/Organizational-Intelligence-Inverse-Physics-"
+  year: 2026
