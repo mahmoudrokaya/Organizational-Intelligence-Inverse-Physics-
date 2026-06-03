@@ -1,0 +1,28 @@
+# Core Scientific Computing
+numpy>=1.26
+scipy>=1.13
+pandas>=2.2
+
+# Machine Learning
+tensorflow>=2.19
+keras>=3.11
+
+# Data Processing
+h5py>=3.15
+
+# Evaluation
+scikit-learn>=1.7
+
+# Visualization
+matplotlib>=3.10
+
+# Utilities
+tqdm>=4.67
+joblib>=1.5
+
+# Configuration and Serialization
+PyYAML>=6.0
+
+# Optional Notebook Support
+jupyter>=1.1
+ipykernel>=6.30
