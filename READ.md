@@ -112,6 +112,21 @@ If you use this data branch, please cite:
 ```
 
 ---
+## Large Dataset Files
+
+The complete experimental datasets and generated sequence files are not stored directly in this repository because their size exceeds GitHub storage recommendations.
+
+To facilitate reproducibility, the full dataset package used in the experiments is available through the following repository:
+
+**Dataset Download Link**
+
+https://taifedusa-my.sharepoint.com/:f:/g/personal/mahmoudrokaya_tu_edu_sa/IgA6IJc4W6p4RayhSCziZu9FAXVab7Rf_MGuje_Gqys7muQ?e=x45bfW
+
+After downloading the dataset files, place them in the appropriate data directory as described in the main repository documentation.
+
+The provided dataset package contains the sequence files, metadata, and supporting resources required to reproduce the experiments reported in the manuscript.
+
+Please note that the source code, configuration files, and reproducibility documentation remain available through this GitHub repository, while large data files are hosted separately to avoid repository size limitations.
 
 ## Related Resources
 
