@@ -1,0 +1,2 @@
+best_epoch,hardware_mode,latency_mean_sec,latency_p95_sec,latency_p99_sec,model,new_reviewer_requested_experiment,parameter_count,replaces_existing_manuscript_numbers,test_MAE_mean,test_MAE_std,test_RMSE_mean,test_RMSE_std,test_residual_mean,test_residual_std
+4,CPU,2.8271802000002935,2.8458346850064116,2.8471921370329802,MLP_4x256,True,198401,False,0.03236455010871093,0.010163509537236612,0.05595346391201019,0.02061185262362817,0.012178846448659898,0.0021831485374536725
