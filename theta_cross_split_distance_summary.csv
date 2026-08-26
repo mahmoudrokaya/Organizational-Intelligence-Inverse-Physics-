@@ -1,0 +1,4 @@
+closest_file_a,closest_file_b,mean_standardized_theta_distance,median_standardized_theta_distance,minimum_standardized_theta_distance,split_a,split_b
+seq_000040.npz,seq_000071.npz,2.371041948616127,2.374579319663566,0.14861810843639306,train,validation
+seq_000025.npz,seq_000088.npz,2.359735049094669,2.426607617071234,0.14807454314061563,train,test
+seq_000072.npz,seq_000092.npz,2.3157324812961755,2.392085024010488,0.4046297818902063,validation,test

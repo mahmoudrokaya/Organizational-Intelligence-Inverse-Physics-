@@ -1,0 +1,8 @@
+evidence,issue,status
+"0, 100",Sequence-count values found in code/docs,OBSERVED
+New_Branch\experiments\01_core_validation\01_audit_generation_and_theta_split.py | simulator.py | New_Branch\outputs\audit\dataset_location_audit\text_references.csv | New_Branch\experiments\01_core_validation\00_audit_dataset_locations.py | data\READ.md | New_Branch\outputs\audit\dataset_location_audit\audit_summary.json | New_Branch\outputs\audit\dataset_location_audit\findings.csv | build_new_branch.py | folder_structure.txt | New_Branch\README.md,Top candidate generator files,OBSERVED
+100 of 100 NPZ files contain theta.,NPZ files containing theta,OBSERVED
+"No exact theta vectors are shared between train, validation, and test.",Exact theta overlap across current 70/15/15 splits,PASS
+Minimum standardized distance = 0.14861811; seq_000040.npz vs seq_000071.npz,Closest theta pair: train vs validation,OBSERVED
+Minimum standardized distance = 0.14807454; seq_000025.npz vs seq_000088.npz,Closest theta pair: train vs test,OBSERVED
+Minimum standardized distance = 0.40462978; seq_000072.npz vs seq_000092.npz,Closest theta pair: validation vs test,OBSERVED
