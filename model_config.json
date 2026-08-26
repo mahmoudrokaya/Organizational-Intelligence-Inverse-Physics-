@@ -1,0 +1,10 @@
+{
+  "architecture": "centralized_multilayer_perceptron",
+  "hidden_layers": 4,
+  "hidden_width": 256,
+  "activation": "relu",
+  "output_activation": "linear",
+  "training_objective": "supervised_reconstruction_MSE",
+  "uses_physics_loss": false,
+  "important_note": "This architecture follows the manuscript-described centralized multilayer perceptron with four hidden layers of width 256. Results belong only to the new reviewer-requested baseline experiment."
+}

@@ -1,0 +1,34 @@
+{
+  "experiment_family": "reviewer_requested_baseline_comparison",
+  "new_experiment": true,
+  "replaces_existing_manuscript_numbers": false,
+  "seed": 42,
+  "train_fraction": 0.7,
+  "validation_fraction": 0.15,
+  "test_fraction": 0.15,
+  "input_channels": 2,
+  "output_channels": 1,
+  "input_semantics": [
+    "observed_field",
+    "sensor_mask"
+  ],
+  "target_semantics": "full_propagation_field",
+  "batch_size": 1,
+  "epochs": 5,
+  "learning_rate": 0.001,
+  "optimizer": "Adam",
+  "physics_operator": "second_order_wave_equation",
+  "use_common_wave_residual": true,
+  "metrics": [
+    "MAE",
+    "RMSE",
+    "wave_residual",
+    "inference_latency",
+    "parameter_count"
+  ],
+  "latency_warmup_runs": 3,
+  "latency_measurement_runs": 10,
+  "selection_metric": "validation_RMSE",
+  "test_policy": "evaluate_best_validation_checkpoint_only",
+  "result_policy": "All values produced by this baseline suite are new reviewer-requested experimental results. They do not replace or modify numerical values already reported in the current manuscript."
+}

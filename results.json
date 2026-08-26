@@ -1,0 +1,80 @@
+{
+  "experiment_family": "reviewer_requested_baseline_comparison",
+  "model": "MLP_4x256",
+  "new_experiment": true,
+  "replaces_existing_manuscript_numbers": false,
+  "parameter_count": 198401,
+  "training_time_sec": 2707.4495256000664,
+  "best_validation_epoch": 4,
+  "validation": {
+    "count": 15,
+    "MAE_mean": 0.03818103025356929,
+    "MAE_std": 0.014041985541347782,
+    "RMSE_mean": 0.06488423943519592,
+    "RMSE_std": 0.024007937871968796,
+    "Residual_mean": 0.01314048816760381,
+    "Residual_std": 0.002417076026751747
+  },
+  "test": {
+    "count": 15,
+    "MAE_mean": 0.03236455010871093,
+    "MAE_std": 0.010163509537236612,
+    "RMSE_mean": 0.05595346391201019,
+    "RMSE_std": 0.02061185262362817,
+    "Residual_mean": 0.012178846448659898,
+    "Residual_std": 0.0021831485374536725
+  },
+  "latency": {
+    "latency_runs": 10,
+    "latency_mean_sec": 2.8271802000002935,
+    "latency_std_sec": 0.014924083032485061,
+    "latency_p50_sec": 2.8280315000447445,
+    "latency_p95_sec": 2.8458346850064116,
+    "latency_p99_sec": 2.8471921370329802
+  },
+  "common_protocol": {
+    "experiment_family": "reviewer_requested_baseline_comparison",
+    "new_experiment": true,
+    "replaces_existing_manuscript_numbers": false,
+    "seed": 42,
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "input_channels": 2,
+    "output_channels": 1,
+    "input_semantics": [
+      "observed_field",
+      "sensor_mask"
+    ],
+    "target_semantics": "full_propagation_field",
+    "batch_size": 1,
+    "epochs": 5,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "physics_operator": "second_order_wave_equation",
+    "use_common_wave_residual": true,
+    "metrics": [
+      "MAE",
+      "RMSE",
+      "wave_residual",
+      "inference_latency",
+      "parameter_count"
+    ],
+    "latency_warmup_runs": 3,
+    "latency_measurement_runs": 10,
+    "selection_metric": "validation_RMSE",
+    "test_policy": "evaluate_best_validation_checkpoint_only",
+    "result_policy": "All values produced by this baseline suite are new reviewer-requested experimental results. They do not replace or modify numerical values already reported in the current manuscript."
+  },
+  "model_specific_config": {
+    "architecture": "centralized_multilayer_perceptron",
+    "hidden_layers": 4,
+    "hidden_width": 256,
+    "activation": "relu",
+    "output_activation": "linear",
+    "training_objective": "supervised_reconstruction_MSE",
+    "uses_physics_loss": false,
+    "important_note": "This architecture follows the manuscript-described centralized multilayer perceptron with four hidden layers of width 256. Results belong only to the new reviewer-requested baseline experiment."
+  },
+  "important_note": "These results belong only to the new reviewer-requested baseline comparison. They do not replace, alter, or reinterpret the numerical values already reported in the current manuscript."
+}

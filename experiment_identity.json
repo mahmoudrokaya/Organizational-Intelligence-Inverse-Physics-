@@ -1,0 +1,11 @@
+{
+  "model": "MLP_4x256",
+  "seed": 42,
+  "run_directory": "D:\\47\\472\\New-Papers\\GIS\\Codes\\New_Branch\\outputs\\baseline_comparison\\mlp_4x256\\mlp_4x256_20260822-064125",
+  "dataset_directory": "D:\\47\\472\\New-Papers\\GIS\\Codes\\data\\sim\\sequences",
+  "total_sequences_for_this_new_experiment": 100,
+  "train_sequences": 70,
+  "validation_sequences": 15,
+  "test_sequences": 15,
+  "replaces_existing_manuscript_numbers": false
+}

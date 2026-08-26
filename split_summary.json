@@ -1,0 +1,8 @@
+{
+  "total": 100,
+  "train": 70,
+  "validation": 15,
+  "test": 15,
+  "split_method": "sorted sequence filenames using 70/15/15 positional partition",
+  "important_note": "This split belongs only to the new reviewer-requested comparison experiments and does not replace the experimental numbers already reported in the manuscript."
+}
