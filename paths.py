@@ -1,0 +1,16 @@
+from pathlib import Path
+
+ORIGINAL_ROOT = Path(r"D:\47\472\New-Papers\GIS\Codes")
+NEW_BRANCH_ROOT = ORIGINAL_ROOT / "New_Branch"
+DATA_ROOT = ORIGINAL_ROOT / "data"
+
+SRC_ROOT = NEW_BRANCH_ROOT / "src"
+EXPERIMENTS_ROOT = NEW_BRANCH_ROOT / "experiments"
+OUTPUTS_ROOT = NEW_BRANCH_ROOT / "outputs"
+
+RAW_OUTPUT_DIR = OUTPUTS_ROOT / "raw"
+TABLES_DIR = OUTPUTS_ROOT / "tables"
+FIGURES_DIR = OUTPUTS_ROOT / "figures"
+LOGS_DIR = OUTPUTS_ROOT / "logs"
+MODELS_DIR = OUTPUTS_ROOT / "models"
+AUDIT_DIR = OUTPUTS_ROOT / "audit"
