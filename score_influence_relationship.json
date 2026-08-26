@@ -1,0 +1,7 @@
+{
+  "n_records": 480,
+  "correlation_influence_sensor_score": -0.4901682593512718,
+  "correlation_influence_physics_score": -0.2671259870246671,
+  "correlation_influence_composite_score": -0.8943148554742938,
+  "interpretation_note": "Scores are lower-is-better, while influence is higher-is-better. Therefore a negative correlation with composite score is expected by construction."
+}

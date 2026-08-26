@@ -1,5 +1,6 @@
 evidence,issue,status
-normalized entropy: 0.99974325 -> 0.99920489; delta=-0.00053836,Validation gate entropy from initial to final logged epoch,DECREASED
-0.25829802 -> 0.26216310; delta=+0.00386508,Validation dominant-expert probability,OBSERVED
-9 of 16 agents,Agents whose modal expert changed between initial and final epoch,OBSERVED
--0.00053836,Mean agent-level normalized entropy change,OBSERVED
+0.90536547 -> 0.90091913; delta=-0.00444634,Normalized influence entropy,OBSERVED
+0.15125016 -> 0.14555884; delta=-0.00569132,Maximum agent influence,OBSERVED
+12.31099637 -> 12.16878037,Effective number of influential agents,OBSERVED
+20 of 25 epoch-to-epoch validation transitions changed the dominant agent.,Dominant-agent transitions,OBSERVED
+mean absolute change=0.03361295; maximum absolute change=0.08672921,Agent-level redistribution magnitude,OBSERVED

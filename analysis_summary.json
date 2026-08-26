@@ -1,29 +1,40 @@
 {
   "source_run": "D:\\47\\472\\New-Papers\\GIS\\Codes\\New_Branch\\outputs\\organizational_evolution\\org_evolution_20260821-191814",
-  "source_agent_records": 960,
-  "analysis_type": "reviewer_requested_micro_expert_specialization",
+  "analysis": "reviewer_requested_influence_redistribution",
   "new_experimental_analysis": true,
-  "replaces_current_manuscript_numbers": false,
+  "replaces_existing_manuscript_numbers": false,
   "findings": [
     {
-      "issue": "Validation gate entropy from initial to final logged epoch",
-      "status": "DECREASED",
-      "evidence": "normalized entropy: 0.99974325 -> 0.99920489; delta=-0.00053836"
+      "issue": "Normalized influence entropy",
+      "status": "OBSERVED",
+      "evidence": "0.90536547 -> 0.90091913; delta=-0.00444634"
     },
     {
-      "issue": "Validation dominant-expert probability",
+      "issue": "Maximum agent influence",
       "status": "OBSERVED",
-      "evidence": "0.25829802 -> 0.26216310; delta=+0.00386508"
+      "evidence": "0.15125016 -> 0.14555884; delta=-0.00569132"
     },
     {
-      "issue": "Agents whose modal expert changed between initial and final epoch",
+      "issue": "Effective number of influential agents",
       "status": "OBSERVED",
-      "evidence": "9 of 16 agents"
+      "evidence": "12.31099637 -> 12.16878037"
     },
     {
-      "issue": "Mean agent-level normalized entropy change",
+      "issue": "Dominant-agent transitions",
       "status": "OBSERVED",
-      "evidence": "-0.00053836"
+      "evidence": "20 of 25 epoch-to-epoch validation transitions changed the dominant agent."
+    },
+    {
+      "issue": "Agent-level redistribution magnitude",
+      "status": "OBSERVED",
+      "evidence": "mean absolute change=0.03361295; maximum absolute change=0.08672921"
     }
-  ]
+  ],
+  "score_influence_relationship": {
+    "n_records": 480,
+    "correlation_influence_sensor_score": -0.4901682593512718,
+    "correlation_influence_physics_score": -0.2671259870246671,
+    "correlation_influence_composite_score": -0.8943148554742938,
+    "interpretation_note": "Scores are lower-is-better, while influence is higher-is-better. Therefore a negative correlation with composite score is expected by construction."
+  }
 }
