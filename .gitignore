@@ -1,36 +1,15 @@
-# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Environments
 .venv/
 venv/
-env/
-*.egg-info/
 
-# Model checkpoints
-*.keras
-*.h5
-*.ckpt
-checkpoints/
+outputs/raw/*
+outputs/models/*
+outputs/logs/*
 
-# Large generated outputs
-outputs/
-runs/
-logs/
-*.log
-
-# Archives
-*.zip
-*.rar
-*.7z
-
-# Local system files
-.DS_Store
-Thumbs.db
-
-# Local path utilities
-Folder_Structure.py
-folder_structure.txt
+!outputs/raw/.gitkeep
+!outputs/models/.gitkeep
+!outputs/logs/.gitkeep
