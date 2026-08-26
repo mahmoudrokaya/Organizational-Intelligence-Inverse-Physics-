@@ -1,0 +1,29 @@
+{
+  "source_run": "D:\\47\\472\\New-Papers\\GIS\\Codes\\New_Branch\\outputs\\organizational_evolution\\org_evolution_20260821-191814",
+  "source_agent_records": 960,
+  "analysis_type": "reviewer_requested_micro_expert_specialization",
+  "new_experimental_analysis": true,
+  "replaces_current_manuscript_numbers": false,
+  "findings": [
+    {
+      "issue": "Validation gate entropy from initial to final logged epoch",
+      "status": "DECREASED",
+      "evidence": "normalized entropy: 0.99974325 -> 0.99920489; delta=-0.00053836"
+    },
+    {
+      "issue": "Validation dominant-expert probability",
+      "status": "OBSERVED",
+      "evidence": "0.25829802 -> 0.26216310; delta=+0.00386508"
+    },
+    {
+      "issue": "Agents whose modal expert changed between initial and final epoch",
+      "status": "OBSERVED",
+      "evidence": "9 of 16 agents"
+    },
+    {
+      "issue": "Mean agent-level normalized entropy change",
+      "status": "OBSERVED",
+      "evidence": "-0.00053836"
+    }
+  ]
+}

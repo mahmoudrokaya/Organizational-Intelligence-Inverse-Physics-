@@ -1,0 +1,5 @@
+evidence,issue,status
+normalized entropy: 0.99974325 -> 0.99920489; delta=-0.00053836,Validation gate entropy from initial to final logged epoch,DECREASED
+0.25829802 -> 0.26216310; delta=+0.00386508,Validation dominant-expert probability,OBSERVED
+9 of 16 agents,Agents whose modal expert changed between initial and final epoch,OBSERVED
+-0.00053836,Mean agent-level normalized entropy change,OBSERVED
