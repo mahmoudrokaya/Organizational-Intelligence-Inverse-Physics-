@@ -1,0 +1,5 @@
+evidence,question,status
+The directory contains exactly 100 direct NPZ files.,Does data\sim\sequences contain only 100 sequences?,YES
+"No directory containing 10,000 NPZ files was found under the scanned project root.","Do 10,000 NPZ sequences exist elsewhere under Codes?",NOT FOUND
+"3 archive candidates were detected; none of the inspectable ZIP files contained 1,000 or more NPZ entries.",Could the full dataset be stored in a detected ZIP archive?,NO LARGE NPZ ZIP FOUND
+11,"How many source/code/document references mention 10,000?",OBSERVED
