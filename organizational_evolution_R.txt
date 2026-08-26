@@ -1,0 +1,386 @@
+====================================================================================================
+ORGANIZATIONAL-EVOLUTION RESULTS FOR REVIEWER RESPONSE
+====================================================================================================
+Project root: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch
+Organizational run: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814
+Analysis run: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814
+
+STATUS: READ-ONLY extraction from already completed experiments.
+No training, inference, or experiment execution is performed.
+
+====================================================================================================
+FILE AVAILABILITY
+====================================================================================================
+FOUND    agent_evolution                      /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814/tables/agent_evolution.csv
+FOUND    system_evolution                     /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814/tables/system_evolution.csv
+FOUND    inter_agent_disagreement             /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814/tables/inter_agent_disagreement.csv
+FOUND    training_history                     /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814/tables/training_history.csv
+FOUND    org_results                          /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814/results.json
+FOUND    specialization_summary               /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/agent_specialization_summary.csv
+FOUND    initial_vs_final_specialization      /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/initial_vs_final_specialization.csv
+FOUND    system_specialization_summary        /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/system_specialization_summary.csv
+FOUND    specialization_changes               /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/epoch_to_epoch_specialization_changes.csv
+FOUND    expert_utilization                   /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/expert_utilization.csv
+FOUND    analysis_summary                     /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/analysis_summary.json
+FOUND    analysis_findings                    /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/findings.csv
+FOUND    agent_influence_summary              /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/agent_influence_summary.csv
+FOUND    initial_vs_final_influence           /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/initial_vs_final_agent_influence.csv
+FOUND    dominant_agent_transitions           /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/dominant_agent_transitions.csv
+FOUND    epoch_influence_summary              /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/epoch_influence_summary.csv
+FOUND    system_influence_distribution        /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/system_influence_distribution.csv
+FOUND    score_influence_relationship         /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/score_influence_relationship.json
+FOUND    influence_analysis_summary           /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/analysis_summary.json
+FOUND    influence_findings                   /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/findings.csv
+
+====================================================================================================
+1. AGENT EVOLUTION
+====================================================================================================
+
+AGENT EVOLUTION: RAW AVAILABLE VARIABLES
+----------------------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814/tables/agent_evolution.csv
+Rows: 960
+Columns: ['agent_id', 'batch_index', 'composite_influence_score', 'dominant_expert', 'dominant_expert_probability', 'effective_number_of_experts', 'epoch', 'gate_entropy', 'gate_entropy_normalized', 'gate_expert_0', 'gate_expert_1', 'gate_expert_2', 'gate_expert_3', 'global_mae', 'global_residual', 'global_rmse', 'influence_weight', 'local_physics_score', 'sample_in_batch', 'sensor_consistency_score', 'split']
+
+First 10 rows:
+ agent_id  batch_index  composite_influence_score  dominant_expert  dominant_expert_probability  effective_number_of_experts  epoch  gate_entropy  gate_entropy_normalized  gate_expert_0  gate_expert_1  gate_expert_2  gate_expert_3  global_mae  global_residual  global_rmse  influence_weight  local_physics_score  sample_in_batch  sensor_consistency_score      split
+        0            0                   0.581067                3                     0.258007                     3.998892      0      1.386017                 0.999800       0.241559       0.249018       0.251415       0.258007    0.035576         0.006912     0.065891          0.016252             0.012973                0                  0.144222 validation
+        1            0                   0.370130                0                     0.252469                     3.999661      0      1.386210                 0.999939       0.252469       0.251431       0.244417       0.251683    0.035576         0.006912     0.065891          0.046660             0.005934                0                  0.122213 validation
+        2            0                   0.241699                1                     0.256018                     3.999407      0      1.386146                 0.999893       0.246146       0.256018       0.252149       0.245687    0.035576         0.006912     0.065891          0.088680             0.002362                0                  0.109738 validation
+        3            0                   0.266621                0                     0.255803                     3.999632      0      1.386202                 0.999934       0.255803       0.248996       0.247574       0.247627    0.035576         0.006912     0.065891          0.078290             0.006511                0                  0.088240 validation
+        4            0                   0.328749                3                     0.254376                     3.999680      0      1.386214                 0.999942       0.249074       0.250929       0.245621       0.254376    0.035576         0.006912     0.065891          0.057385             0.008478                0                  0.093301 validation
+        5            0                   0.417739                3                     0.261257                     3.997659      0      1.385709                 0.999578       0.241628       0.255348       0.241766       0.261257    0.035576         0.006912     0.065891          0.036776             0.008488                0                  0.135008 validation
+        6            0                   0.246514                3                     0.259314                     3.998594      0      1.385943                 0.999746       0.245016       0.253094       0.242577       0.259314    0.035576         0.006912     0.065891          0.086571             0.001845                0                  0.120808 validation
+        7            0                   0.309451                1                     0.272133                     3.994207      0      1.384845                 0.998955       0.246413       0.272133       0.235285       0.246168    0.035576         0.006912     0.065891          0.063198             0.008057                0                  0.132674 validation
+        8            0                   0.117579                3                     0.256222                     3.998673      0      1.385963                 0.999761       0.240100       0.248555       0.255124       0.256222    0.035576         0.006912     0.065891          0.164949             0.001851                0                  0.082247 validation
+        9            0                   0.999277                0                     0.253224                     3.999885      0      1.386266                 0.999979       0.253224       0.248322       0.249366       0.249087    0.035576         0.006912     0.065891          0.002008             0.017610                0                  0.229241 validation
+
+====================================================================================================
+2. SPECIALIZATION EVOLUTION
+====================================================================================================
+
+SPECIALIZATION: INITIAL VS FINAL
+--------------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/initial_vs_final_specialization.csv
+Rows: 16
+Columns: ['agent_id', 'delta_dominant_probability', 'delta_effective_experts', 'delta_normalized_gate_entropy', 'final_dominant_probability', 'final_effective_experts', 'final_epoch', 'final_modal_expert', 'final_normalized_gate_entropy', 'initial_dominant_probability', 'initial_effective_experts', 'initial_epoch', 'initial_modal_expert', 'initial_normalized_gate_entropy', 'modal_expert_changed']
+
+Detected agent column: agent_id
+Detected initial column: initial_dominant_probability
+Detected final column: final_dominant_probability
+Detected change column: modal_expert_changed
+
+Per-agent specialization change:
+  Agent 0.0: initial=0.258076, final=0.252538, delta=1.000000, pct=-2.146%
+  Agent 1.0: initial=0.252585, final=0.256258, delta=1.000000, pct=1.454%
+  Agent 2.0: initial=0.255873, final=0.279319, delta=0.000000, pct=9.163%
+  Agent 3.0: initial=0.255820, final=0.255843, delta=1.000000, pct=0.009%
+  Agent 4.0: initial=0.254425, final=0.252336, delta=0.000000, pct=-0.821%
+  Agent 5.0: initial=0.261542, final=0.274574, delta=0.000000, pct=4.983%
+  Agent 6.0: initial=0.259256, final=0.282589, delta=0.000000, pct=9.000%
+  Agent 7.0: initial=0.272440, final=0.254252, delta=1.000000, pct=-6.676%
+  Agent 8.0: initial=0.256327, final=0.254338, delta=1.000000, pct=-0.776%
+  Agent 9.0: initial=0.253213, final=0.278292, delta=0.000000, pct=9.904%
+  Agent 10.0: initial=0.262989, final=0.258283, delta=1.000000, pct=-1.789%
+  Agent 11.0: initial=0.251753, final=0.263394, delta=1.000000, pct=4.624%
+  Agent 12.0: initial=0.262756, final=0.253374, delta=1.000000, pct=-3.570%
+  Agent 13.0: initial=0.255503, final=0.251252, delta=1.000000, pct=-1.664%
+  Agent 14.0: initial=0.257842, final=0.251831, delta=0.000000, pct=-2.331%
+  Agent 15.0: initial=0.262368, final=0.276134, delta=0.000000, pct=5.247%
+
+Largest specialization increase: Agent 0.0 (delta=1.000000)
+Largest specialization decrease: Agent 2.0 (delta=0.000000)
+Largest absolute specialization change: Agent 0.0 (delta=1.000000)
+
+SPECIALIZATION: SYSTEM SUMMARY
+------------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/system_specialization_summary.csv
+Rows: 12
+Columns: ['agents', 'epoch', 'max_normalized_gate_entropy', 'mean_dominant_probability', 'mean_effective_experts', 'mean_modal_expert_fraction', 'mean_normalized_gate_entropy', 'min_normalized_gate_entropy', 'split', 'std_normalized_gate_entropy']
+
+ agents  epoch  max_normalized_gate_entropy  mean_dominant_probability  mean_effective_experts  mean_modal_expert_fraction  mean_normalized_gate_entropy  min_normalized_gate_entropy      split  std_normalized_gate_entropy
+     16      0                     0.999985                   0.258298                3.998577                      1.0000                      0.999743                     0.998924 validation                     0.000263
+     16      1                     0.999992                   0.260731                3.997058                      1.0000                      0.999469                     0.996450      train                     0.000849
+     16      1                     0.999991                   0.260672                3.997063                      0.9625                      0.999470                     0.996433 validation                     0.000852
+     16      2                     0.999991                   0.261249                3.996580                      1.0000                      0.999382                     0.996272      train                     0.000909
+     16      2                     0.999991                   0.261173                3.996586                      0.9875                      0.999383                     0.996253 validation                     0.000912
+     16      3                     0.999994                   0.260993                3.996500                      1.0000                      0.999368                     0.997390      train                     0.000824
+     16      3                     0.999993                   0.260964                3.996506                      0.9875                      0.999369                     0.997375 validation                     0.000825
+     16      4                     0.999994                   0.262039                3.995646                      0.9375                      0.999213                     0.995125      train                     0.001288
+     16      4                     0.999994                   0.261961                3.995663                      0.9500                      0.999216                     0.995104 validation                     0.001291
+     16      5                     0.999993                   0.262214                3.995603                      0.9625                      0.999206                     0.996568       test                     0.001083
+     16      5                     0.999994                   0.262243                3.995578                      0.9750                      0.999201                     0.996552      train                     0.001089
+     16      5                     0.999994                   0.262163                3.995598                      0.9500                      0.999205                     0.996534 validation                     0.001088
+
+SPECIALIZATION: EPOCH-TO-EPOCH CHANGE
+-------------------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/epoch_to_epoch_specialization_changes.csv
+Rows: 80
+Columns: ['agent_id', 'delta_dominant_probability', 'delta_effective_experts', 'delta_normalized_gate_entropy', 'dominant_expert_changed', 'epoch_from', 'epoch_to', 'modal_expert_from', 'modal_expert_to', 'split']
+
+Detected epoch column: None
+Numeric columns: ['agent_id', 'delta_dominant_probability', 'delta_effective_experts', 'delta_normalized_gate_entropy', 'dominant_expert_changed', 'epoch_from', 'epoch_to', 'modal_expert_from', 'modal_expert_to']
+  agent_id: initial=0.000000, final=15.000000, delta=15.000000, min=0.000000, max=15.000000
+  delta_dominant_probability: initial=-0.002979, final=0.003419, delta=0.006398, min=-0.021458, max=0.026039
+  delta_effective_experts: initial=0.000732, final=-0.001912, delta=-0.002645, min=-0.018291, max=0.010974
+  delta_normalized_gate_entropy: initial=0.000132, final=-0.000346, delta=-0.000478, min=-0.003307, max=0.001982
+  dominant_expert_changed: initial=1.000000, final=0.000000, delta=-1.000000, min=0.000000, max=1.000000
+  epoch_from: initial=0.000000, final=4.000000, delta=4.000000, min=0.000000, max=4.000000
+  epoch_to: initial=1.000000, final=5.000000, delta=4.000000, min=1.000000, max=5.000000
+  modal_expert_from: initial=3.000000, final=3.000000, delta=0.000000, min=0.000000, max=3.000000
+  modal_expert_to: initial=1.000000, final=3.000000, delta=2.000000, min=0.000000, max=3.000000
+
+====================================================================================================
+3. INFLUENCE REDISTRIBUTION
+====================================================================================================
+
+INFLUENCE: INITIAL VS FINAL
+---------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/initial_vs_final_agent_influence.csv
+Rows: 16
+Columns: ['agent_id', 'delta_mean_influence', 'final_composite_score', 'final_epoch', 'final_mean_influence', 'final_physics_score', 'final_sensor_score', 'initial_composite_score', 'initial_epoch', 'initial_mean_influence', 'initial_physics_score', 'initial_sensor_score']
+
+Detected agent column: agent_id
+Detected initial influence column: initial_composite_score
+Detected final influence column: final_composite_score
+  Agent 0.0: initial=0.628608, final=0.396979, delta=-0.231630, pct=-36.848%
+  Agent 1.0: initial=0.349288, final=0.413233, delta=0.063944, pct=18.307%
+  Agent 2.0: initial=0.208828, final=0.291323, delta=0.082495, pct=39.504%
+  Agent 3.0: initial=0.270774, final=0.221486, delta=-0.049288, pct=-18.203%
+  Agent 4.0: initial=0.376548, final=0.434634, delta=0.058085, pct=15.426%
+  Agent 5.0: initial=0.427582, final=0.677813, delta=0.250231, pct=58.522%
+  Agent 6.0: initial=0.197546, final=0.365984, delta=0.168438, pct=85.265%
+  Agent 7.0: initial=0.297773, final=0.406024, delta=0.108251, pct=36.354%
+  Agent 8.0: initial=0.167609, final=0.375205, delta=0.207596, pct=123.857%
+  Agent 9.0: initial=0.997902, final=0.616634, delta=-0.381268, pct=-38.207%
+  Agent 10.0: initial=0.357699, final=0.587597, delta=0.229899, pct=64.272%
+  Agent 11.0: initial=0.412778, final=0.499699, delta=0.086921, pct=21.057%
+  Agent 12.0: initial=0.226550, final=0.220103, delta=-0.006447, pct=-2.846%
+  Agent 13.0: initial=0.786974, final=0.270952, delta=-0.516022, pct=-65.570%
+  Agent 14.0: initial=0.516177, final=0.206025, delta=-0.310151, pct=-60.086%
+  Agent 15.0: initial=0.201245, final=0.176173, delta=-0.025072, pct=-12.458%
+
+Largest influence gain: Agent 5.0 (delta=0.250231)
+Largest influence loss: Agent 13.0 (delta=-0.516022)
+
+INFLUENCE: DOMINANT AGENT TRANSITIONS
+-------------------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/dominant_agent_transitions.csv
+Rows: 25
+Columns: ['batch_index', 'delta_hhi', 'delta_max_influence', 'delta_normalized_entropy', 'dominant_agent_changed', 'dominant_agent_from', 'dominant_agent_to', 'epoch_from', 'epoch_to']
+
+ batch_index  delta_hhi  delta_max_influence  delta_normalized_entropy  dominant_agent_changed  dominant_agent_from  dominant_agent_to  epoch_from  epoch_to
+           0   0.005260            -0.012841                 -0.004497                       1                    8                 13           0         1
+           0  -0.011410             0.003026                  0.023422                       1                   13                  8           1         2
+           0   0.003690             0.013857                  0.001144                       1                    8                 15           2         3
+           0  -0.001238            -0.036112                 -0.007159                       0                   15                 15           3         4
+           0   0.007213             0.029105                 -0.010608                       1                   15                 12           4         5
+           1  -0.003711            -0.044086                  0.005018                       1                    8                 14           0         1
+           1  -0.006595             0.008443                  0.018211                       1                   14                  8           1         2
+           1   0.011331             0.044619                 -0.020436                       1                    8                 15           2         3
+           1   0.005456            -0.031960                 -0.023874                       1                   15                 11           3         4
+           1  -0.003474            -0.007306                  0.015034                       1                   11                 14           4         5
+           2  -0.008471            -0.025499                  0.033966                       1                    8                 14           0         1
+           2  -0.000702             0.021609                  0.001481                       0                   14                 14           1         2
+           2   0.004439            -0.010834                 -0.024148                       1                   14                 15           2         3
+           2  -0.008156            -0.009251                  0.033621                       0                   15                 15           3         4
+           2   0.006201            -0.003542                 -0.021209                       0                   15                 15           4         5
+           3   0.014762             0.076561                 -0.021827                       0                    6                  6           0         1
+           3  -0.009433            -0.061130                  0.010570                       1                    6                  7           1         2
+           3   0.004070             0.006221                 -0.006329                       1                    7                  6           2         3
+           3  -0.006545            -0.008326                  0.015323                       1                    6                 15           3         4
+           3   0.016527             0.034519                 -0.041290                       1                   15                  6           4         5
+           4  -0.000244            -0.001324                  0.004871                       1                    8                 13           0         1
+           4  -0.012156            -0.025728                  0.034140                       1                   13                  7           1         2
+           4   0.008613             0.044342                 -0.025730                       1                    7                 15           2         3
+           4   0.010876            -0.016576                 -0.025335                       1                   15                 11           3         4
+           4  -0.007470            -0.016243                  0.013409                       1                   11                 12           4         5
+
+Number of recorded dominant-agent transitions: 25
+
+INFLUENCE: SYSTEM DISTRIBUTION
+------------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/system_influence_distribution.csv
+Rows: 60
+Columns: ['batch_index', 'coefficient_of_variation', 'dominant_agent', 'effective_number_of_agents', 'epoch', 'hhi_concentration', 'influence_entropy', 'influence_range', 'max_influence', 'min_influence', 'n_agents', 'normalized_influence_entropy', 'split']
+
+ batch_index  coefficient_of_variation  dominant_agent  effective_number_of_agents  epoch  hhi_concentration  influence_entropy  influence_range  max_influence  min_influence  n_agents  normalized_influence_entropy      split
+           0                  0.690101               8                   12.411603      0           0.092265           2.518632         0.162941       0.164949       0.002008        16                      0.908404 validation
+           1                  0.739202               8                   12.068735      0           0.096651           2.490618         0.170984       0.173288       0.002305        16                      0.898301 validation
+           2                  0.730336               8                   11.885094      0           0.095837           2.475285         0.154747       0.156852       0.002105        16                      0.892770 validation
+           3                  0.632064               6                   12.699132      0           0.087469           2.541534         0.122628       0.124639       0.002011        16                      0.916665 validation
+           4                  0.663413               8                   12.490418      0           0.090007           2.524962         0.134486       0.136523       0.002037        16                      0.910687 validation
+           0                  0.709157               8                   12.213253      1           0.093931           2.502522         0.139746       0.144181       0.004435        16                      0.902594      train
+           1                  0.835585               6                   11.372250      1           0.106138           2.431176         0.185521       0.190146       0.004625        16                      0.876861      train
+           2                  0.730527              13                   12.303870      1           0.095854           2.509914         0.136960       0.145295       0.008335        16                      0.905260      train
+           3                  0.696569               0                   12.305100      1           0.092826           2.510014         0.144460       0.147243       0.002783        16                      0.905296      train
+           4                  0.792691              13                   11.867996      1           0.101772           2.473845         0.140461       0.154034       0.013573        16                      0.892251      train
+           0                  0.748601              13                   12.257818      1           0.097525           2.506164         0.134642       0.152108       0.017466        16                      0.903908 validation
+           1                  0.697880              14                   12.237827      1           0.092940           2.504532         0.124153       0.129202       0.005049        16                      0.903319 validation
+           2                  0.630756              14                   13.058747      1           0.087366           2.569458         0.122148       0.131353       0.009204        16                      0.926736 validation
+           3                  0.797310               6                   11.953409      1           0.102231           2.481017         0.195460       0.201200       0.005740        16                      0.894838 validation
+           4                  0.660463              13                   12.660248      1           0.089763           2.538467         0.128666       0.135200       0.006534        16                      0.915558 validation
+           0                  0.632065               8                   12.784982      2           0.087469           2.548271         0.134699       0.137548       0.002849        16                      0.919095      train
+           1                  0.739819               7                   11.858989      2           0.096708           2.473086         0.155821       0.158641       0.002820        16                      0.891977      train
+           2                  0.548479               8                   13.655438      2           0.081302           2.614138         0.128295       0.136370       0.008075        16                      0.942851      train
+           3                  0.628861               8                   13.176704      2           0.087217           2.578450         0.157569       0.168872       0.011303        16                      0.929979      train
+           4                  0.560703               8                   13.551972      2           0.082149           2.606532         0.143774       0.150749       0.006974        16                      0.940108      train
+           0                  0.614695               8                   13.080260      2           0.086116           2.571104         0.148920       0.155134       0.006214        16                      0.927330 validation
+           1                  0.617676               8                   12.871610      2           0.086345           2.555024         0.133701       0.137645       0.003944        16                      0.921530 validation
+           2                  0.621794              14                   13.112477      2           0.086664           2.573564         0.147776       0.152962       0.005186        16                      0.928217 validation
+           3                  0.696262               7                   12.308912      2           0.092799           2.510324         0.132849       0.140070       0.007221        16                      0.905408 validation
+           4                  0.491648               7                   13.917157      2           0.077607           2.633122         0.106574       0.109472       0.002898        16                      0.949698 validation
+           0                  0.730044              15                   12.101149      3           0.095810           2.493300         0.154994       0.164068       0.009074        16                      0.899268      train
+           1                  0.827628               6                   11.436880      3           0.105311           2.436843         0.150692       0.153113       0.002421        16                      0.878905      train
+           2                  0.613034              15                   13.000296      3           0.085988           2.564972         0.126305       0.138024       0.011720        16                      0.925118      train
+           3                  0.622990               2                   12.557600      3           0.086757           2.530326         0.112832       0.118103       0.005271        16                      0.912622      train
+           4                  0.638109              15                   12.990765      3           0.087949           2.564239         0.133658       0.146828       0.013170        16                      0.924854      train
+           0                  0.660980              15                   13.121829      3           0.089806           2.574277         0.152795       0.168991       0.016196        16                      0.928474 validation
+           1                  0.750217              15                   12.162562      3           0.097677           2.498363         0.169769       0.182264       0.012495        16                      0.901094 validation
+           2                  0.676504              15                   12.263307      3           0.091104           2.506612         0.138322       0.142127       0.003806        16                      0.904069 validation
+           3                  0.741551               6                   12.094816      3           0.096869           2.492777         0.144198       0.146291       0.002093        16                      0.899079 validation
+           4                  0.616052              15                   12.958900      3           0.086220           2.561783         0.150372       0.153814       0.003441        16                      0.923968 validation
+           0                  0.752605              11                   11.879215      4           0.097901           2.474790         0.149812       0.156681       0.006869        16                      0.892592      train
+           1                  0.830203               7                   11.256892      4           0.105577           2.420981         0.155460       0.161012       0.005551        16                      0.873184      train
+           2                  0.559828              15                   13.547727      4           0.082088           2.606219         0.111650       0.122232       0.010582        16                      0.939995      train
+           3                  0.646766              12                   12.805735      4           0.088644           2.549893         0.129645       0.140730       0.011086        16                      0.919680      train
+           4                  0.574644              15                   13.447328      4           0.083138           2.598780         0.119720       0.130733       0.011013        16                      0.937312      train
+           0                  0.645819              15                   12.863927      4           0.088568           2.554427         0.123093       0.132878       0.009786        16                      0.921315 validation
+           1                  0.806297              11                   11.383544      4           0.103132           2.432169         0.143878       0.150304       0.006426        16                      0.877219 validation
+           2                  0.571975              15                   13.461435      4           0.082947           2.599829         0.125695       0.132876       0.007181        16                      0.937690 validation
+           3                  0.667218              15                   12.619723      4           0.090324           2.535261         0.132021       0.137966       0.005945        16                      0.914402 validation
+           4                  0.744004              11                   12.079870      4           0.097096           2.491540         0.126535       0.137238       0.010702        16                      0.898633 validation
+           0                  0.730090               6                   12.068533      5           0.095814           2.490601         0.155468       0.161947       0.006479        16                      0.898295       test
+           1                  0.783253               6                   12.102667      5           0.100843           2.493426         0.192556       0.196393       0.003837        16                      0.899313       test
+           2                  0.657762               2                   12.582318      5           0.089541           2.532293         0.145775       0.150589       0.004814        16                      0.913331       test
+           3                  0.820918               2                   11.662895      5           0.104619           2.456412         0.166256       0.171386       0.005130        16                      0.885964       test
+           4                  0.650748              15                   12.610574      5           0.088967           2.534536         0.120510       0.124264       0.003754        16                      0.914141       test
+           0                  0.710659              12                   12.344562      5           0.094065           2.513216         0.139545       0.144453       0.004908        16                      0.906451      train
+           1                  0.852909               6                   11.010999      5           0.107966           2.398895         0.158462       0.163892       0.005430        16                      0.865218      train
+           2                  0.633380              12                   12.893428      5           0.087573           2.556718         0.133599       0.142431       0.008831        16                      0.922141      train
+           3                  0.673612              12                   12.406629      5           0.090860           2.518231         0.141963       0.146833       0.004870        16                      0.908260      train
+           4                  0.672456              12                   12.759542      5           0.090762           2.546279         0.145279       0.159126       0.013846        16                      0.918376      train
+           0                  0.729722              12                   12.491072      5           0.095781           2.525014         0.149264       0.161983       0.012719        16                      0.910706 validation
+           1                  0.771063              14                   11.868064      5           0.099659           2.473851         0.135641       0.142998       0.007357        16                      0.892253 validation
+           2                  0.652971              15                   12.692692      5           0.089148           2.541026         0.118071       0.129334       0.011263        16                      0.916482 validation
+           3                  0.842386               6                   11.254644      5           0.106851           2.420781         0.168150       0.172484       0.004334        16                      0.873112 validation
+           4                  0.658808              12                   12.537430      5           0.089627           2.528719         0.115610       0.120995       0.005384        16                      0.912042 validation
+
+INFLUENCE: EPOCH SUMMARY
+------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/epoch_influence_summary.csv
+Rows: 12
+Columns: ['epoch', 'mean_coefficient_of_variation', 'mean_effective_number_of_agents', 'mean_hhi_concentration', 'mean_influence_range', 'mean_max_influence', 'mean_normalized_influence_entropy', 'samples', 'split', 'std_normalized_influence_entropy']
+
+ epoch  mean_coefficient_of_variation  mean_effective_number_of_agents  mean_hhi_concentration  mean_influence_range  mean_max_influence  mean_normalized_influence_entropy  samples      split  std_normalized_influence_entropy
+     0                       0.691023                        12.310996                0.092446              0.149157            0.151250                           0.905365        5 validation                          0.009667
+     1                       0.752906                        12.012494                0.098104              0.149430            0.156180                           0.896453        5      train                          0.012196
+     1                       0.707002                        12.433610                0.093965              0.141014            0.149812                           0.908872        5 validation                          0.012413
+     2                       0.621985                        13.005617                0.086969              0.144032            0.150436                           0.924802        5      train                          0.020597
+     2                       0.608415                        13.058083                0.085906              0.133964            0.139057                           0.926437        5 validation                          0.015901
+     3                       0.686361                        12.417338                0.092363              0.135696            0.144027                           0.908153        5      train                          0.019500
+     3                       0.689061                        12.520283                0.092335              0.151091            0.158697                           0.911337        5 validation                          0.013795
+     4                       0.672809                        12.587379                0.091470              0.133257            0.142278                           0.912552        5      train                          0.029005
+     4                       0.687063                        12.481700                0.092413              0.130244            0.138252                           0.909852        5 validation                          0.023010
+     5                       0.728554                        12.205398                0.095957              0.156113            0.160916                           0.902209        5       test                          0.011765
+     5                       0.708603                        12.283032                0.094245              0.143770            0.151347                           0.904089        5      train                          0.022715
+     5                       0.730990                        12.168780                0.096213              0.137347            0.145559                           0.900919        5 validation                          0.018097
+
+SCORE-INFLUENCE RELATIONSHIP
+----------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/score_influence_relationship.json
+{
+  "n_records": 480,
+  "correlation_influence_sensor_score": -0.4901682593512718,
+  "correlation_influence_physics_score": -0.2671259870246671,
+  "correlation_influence_composite_score": -0.8943148554742938,
+  "interpretation_note": "Scores are lower-is-better, while influence is higher-is-better. Therefore a negative correlation with composite score is expected by construction."
+}
+
+====================================================================================================
+4. COMMUNICATION / COOPERATIVE EVOLUTION
+====================================================================================================
+
+COMMUNICATION / COOPERATION: INTER-AGENT DISAGREEMENT
+-----------------------------------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814/tables/inter_agent_disagreement.csv
+Rows: 2520
+Columns: ['agent_i', 'agent_j', 'batch_index', 'epoch', 'mean_absolute_disagreement', 'overlap_height', 'overlap_width', 'split']
+
+Numeric columns: ['agent_i', 'agent_j', 'batch_index', 'epoch', 'mean_absolute_disagreement', 'overlap_height', 'overlap_width']
+  agent_i: initial=0.000000, final=14.000000, delta=14.000000, pct=N/A%, min=0.000000, max=14.000000
+  agent_j: initial=1.000000, final=15.000000, delta=14.000000, pct=1400.000%, min=1.000000, max=15.000000
+  batch_index: initial=0.000000, final=4.000000, delta=4.000000, pct=N/A%, min=0.000000, max=4.000000
+  mean_absolute_disagreement: initial=0.013085, final=0.007332, delta=-0.005753, pct=-43.966%, min=0.000163, max=0.038391
+  overlap_height: initial=40.000000, final=40.000000, delta=0.000000, pct=0.000%, min=16.000000, max=48.000000
+  overlap_width: initial=16.000000, final=16.000000, delta=0.000000, pct=0.000%, min=16.000000, max=48.000000
+
+COMMUNICATION / COOPERATION: SYSTEM EVOLUTION
+---------------------------------------------
+Source: /mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814/tables/system_evolution.csv
+Rows: 60
+Columns: ['batch_index', 'dominant_expert_0_count', 'dominant_expert_1_count', 'dominant_expert_2_count', 'dominant_expert_3_count', 'epoch', 'global_mae', 'global_residual', 'global_rmse', 'mean_gate_entropy', 'mean_gate_entropy_normalized', 'mean_influence_entropy', 'mean_influence_entropy_normalized', 'mean_max_gate_probability', 'mean_max_influence', 'number_of_agents', 'number_of_micro_experts', 'split']
+  batch_index: initial=0.000000, final=4.000000, delta=4.000000, pct=N/A%, min=0.000000, max=4.000000
+  dominant_expert_0_count: initial=5.000000, final=2.000000, delta=-3.000000, pct=-60.000%, min=2.000000, max=6.000000
+  dominant_expert_1_count: initial=4.000000, final=5.000000, delta=1.000000, pct=25.000%, min=3.000000, max=6.000000
+  dominant_expert_2_count: initial=0.000000, final=3.000000, delta=3.000000, pct=N/A%, min=0.000000, max=3.000000
+  dominant_expert_3_count: initial=7.000000, final=6.000000, delta=-1.000000, pct=-14.286%, min=5.000000, max=7.000000
+  global_mae: initial=0.035576, final=0.023059, delta=-0.012518, pct=-35.185%, min=0.015506, max=0.054145
+  global_residual: initial=0.006912, final=0.000831, delta=-0.006082, pct=-87.983%, min=0.000385, max=0.008931
+  global_rmse: initial=0.065891, final=0.037141, delta=-0.028749, pct=-43.632%, min=0.033945, max=0.083832
+  mean_gate_entropy: initial=1.385938, final=1.385183, delta=-0.000755, pct=-0.054%, min=1.385178, max=1.385947
+  mean_gate_entropy_normalized: initial=0.999743, final=0.999198, delta=-0.000545, pct=-0.054%, min=0.999195, max=0.999749
+  mean_influence_entropy: initial=2.518632, final=2.534535, delta=0.015904, pct=0.631%, min=2.398895, max=2.633122
+  mean_influence_entropy_normalized: initial=0.908404, final=0.914140, delta=0.005736, pct=0.631%, min=0.865218, max=0.949698
+  mean_max_gate_probability: initial=0.258307, final=0.262278, delta=0.003972, pct=1.538%, min=0.258238, max=0.262297
+  mean_max_influence: initial=0.164949, final=0.124264, delta=-0.040685, pct=-24.665%, min=0.109472, max=0.201200
+  number_of_agents: initial=16.000000, final=16.000000, delta=0.000000, pct=0.000%, min=16.000000, max=16.000000
+  number_of_micro_experts: initial=4.000000, final=4.000000, delta=0.000000, pct=0.000%, min=4.000000, max=4.000000
+
+COMMUNICATION-TOPOLOGY EVIDENCE CHECK
+-------------------------------------
+No explicit adjacency/link/topology variable was detected in the inspected tables.
+Reviewer-facing wording should therefore describe 'communication/cooperative behavior' rather than claim experimentally demonstrated topology rewiring.
+
+====================================================================================================
+5. POSSIBLE ABLATION RESULT FILES
+====================================================================================================
+No ablation-named CSV/JSON file was detected automatically.
+Use the already verified manuscript ablation values for the relationship-to-performance paragraph.
+
+====================================================================================================
+REVIEWER-READY EXTRACTION SUMMARY
+====================================================================================================
+
+A. SPECIALIZATION EVOLUTION
+---------------------------
+Largest verified agent-level specialization change: Agent 0.0, initial=0.258076, final=0.252538, delta=1.000000.
+
+B. INFLUENCE REDISTRIBUTION
+---------------------------
+Largest influence gain: Agent 5.0, initial=0.427582, final=0.677813, delta=0.250231.
+Largest influence loss: Agent 13.0, initial=0.786974, final=0.270952, delta=-0.516022.
+Recorded dominant-agent transitions: 25.
+
+C. COMMUNICATION / COOPERATIVE EVOLUTION
+--------------------------------------
+agent_i: initial=0.000000, final=14.000000, delta=14.000000, min=0.000000, max=14.000000.
+agent_j: initial=1.000000, final=15.000000, delta=14.000000, min=1.000000, max=15.000000.
+batch_index: initial=0.000000, final=4.000000, delta=4.000000, min=0.000000, max=4.000000.
+mean_absolute_disagreement: initial=0.013085, final=0.007332, delta=-0.005753, min=0.000163, max=0.038391.
+overlap_height: initial=40.000000, final=40.000000, delta=0.000000, min=16.000000, max=48.000000.
+overlap_width: initial=16.000000, final=16.000000, delta=0.000000, min=16.000000, max=48.000000.
+
+D. COMMUNICATION-TOPOLOGY CLAIM SCOPE
+-------------------------------------
+No explicit link/adjacency/topology variable was detected. Use 'communication/cooperative evolution' and do NOT claim experimentally verified topology rewiring.
+
+====================================================================================================
+INTERPRETATION SAFEGUARDS
+====================================================================================================
+1. Do not state that specialization increased unless the extracted initial/final and temporal values support that direction.
+2. Do not state that influence redistribution was large unless the extracted changes support that characterization.
+3. Do not claim communication-topology rewiring unless explicit adjacency/link activation variables are present in the outputs.
+4. Inter-agent disagreement is evidence about cooperative behavior, not automatically evidence of topology modification.
+5. Organizational trajectories show temporal structural evolution; the ablation analysis provides the separate component-contribution evidence.
+6. No causal claim should be inferred solely from temporal association.

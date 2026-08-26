@@ -1,0 +1,1211 @@
+{
+  "project_root": "/mnt/d/47/472/New-Papers/GIS/Codes/New_Branch",
+  "organizational_run": "/mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution/org_evolution_20260821-191814",
+  "analysis_run": "/mnt/d/47/472/New-Papers/GIS/Codes/New_Branch/outputs/organizational_evolution_analysis/org_evolution_20260821-191814",
+  "missing_files": [],
+  "agent_evolution": {
+    "columns": [
+      "agent_id",
+      "batch_index",
+      "composite_influence_score",
+      "dominant_expert",
+      "dominant_expert_probability",
+      "effective_number_of_experts",
+      "epoch",
+      "gate_entropy",
+      "gate_entropy_normalized",
+      "gate_expert_0",
+      "gate_expert_1",
+      "gate_expert_2",
+      "gate_expert_3",
+      "global_mae",
+      "global_residual",
+      "global_rmse",
+      "influence_weight",
+      "local_physics_score",
+      "sample_in_batch",
+      "sensor_consistency_score",
+      "split"
+    ],
+    "rows": 960
+  },
+  "specialization": {
+    "agents": [
+      {
+        "agent": 0.0,
+        "initial_specialization": 0.2580757856369018,
+        "final_specialization": 0.2525375664234161,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": -2.14596623229025
+      },
+      {
+        "agent": 1.0,
+        "initial_specialization": 0.2525854587554931,
+        "final_specialization": 0.2562582910060882,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": 1.4540948907713953
+      },
+      {
+        "agent": 2.0,
+        "initial_specialization": 0.2558731317520141,
+        "final_specialization": 0.2793189287185669,
+        "delta_specialization": 0.0,
+        "pct_specialization_change": 9.163055458779427
+      },
+      {
+        "agent": 3.0,
+        "initial_specialization": 0.2558202385902405,
+        "final_specialization": 0.2558430612087249,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": 0.008921349854951988
+      },
+      {
+        "agent": 4.0,
+        "initial_specialization": 0.254424512386322,
+        "final_specialization": 0.2523361146450043,
+        "delta_specialization": 0.0,
+        "pct_specialization_change": -0.8208319716249252
+      },
+      {
+        "agent": 5.0,
+        "initial_specialization": 0.261542010307312,
+        "final_specialization": 0.2745743036270142,
+        "delta_specialization": 0.0,
+        "pct_specialization_change": 4.982868069412341
+      },
+      {
+        "agent": 6.0,
+        "initial_specialization": 0.259255838394165,
+        "final_specialization": 0.2825893402099609,
+        "delta_specialization": 0.0,
+        "pct_specialization_change": 9.000183741405404
+      },
+      {
+        "agent": 7.0,
+        "initial_specialization": 0.2724399983882904,
+        "final_specialization": 0.2542523920536041,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": -6.6758208935109185
+      },
+      {
+        "agent": 8.0,
+        "initial_specialization": 0.2563267767429352,
+        "final_specialization": 0.2543383538722992,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": -0.775737476943404
+      },
+      {
+        "agent": 9.0,
+        "initial_specialization": 0.2532127916812897,
+        "final_specialization": 0.2782921731472015,
+        "delta_specialization": 0.0,
+        "pct_specialization_change": 9.904468608947049
+      },
+      {
+        "agent": 10.0,
+        "initial_specialization": 0.262989467382431,
+        "final_specialization": 0.2582832992076874,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": -1.7894892223573569
+      },
+      {
+        "agent": 11.0,
+        "initial_specialization": 0.251752895116806,
+        "final_specialization": 0.2633936762809753,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": 4.623891677102006
+      },
+      {
+        "agent": 12.0,
+        "initial_specialization": 0.2627558469772338,
+        "final_specialization": 0.2533743739128112,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": -3.570414577771681
+      },
+      {
+        "agent": 13.0,
+        "initial_specialization": 0.2555032551288604,
+        "final_specialization": 0.2512523829936981,
+        "delta_specialization": 1.0,
+        "pct_specialization_change": -1.6637252363060517
+      },
+      {
+        "agent": 14.0,
+        "initial_specialization": 0.2578420102596283,
+        "final_specialization": 0.2518314242362976,
+        "delta_specialization": 0.0,
+        "pct_specialization_change": -2.33111199268049
+      },
+      {
+        "agent": 15.0,
+        "initial_specialization": 0.2623682618141174,
+        "final_specialization": 0.2761339008808136,
+        "delta_specialization": 0.0,
+        "pct_specialization_change": 5.246686078382788
+      }
+    ],
+    "largest_increase": {
+      "agent": 0.0,
+      "initial_specialization": 0.2580757856369018,
+      "final_specialization": 0.2525375664234161,
+      "delta_specialization": 1.0,
+      "pct_specialization_change": -2.14596623229025
+    },
+    "largest_decrease": {
+      "agent": 2.0,
+      "initial_specialization": 0.2558731317520141,
+      "final_specialization": 0.2793189287185669,
+      "delta_specialization": 0.0,
+      "pct_specialization_change": 9.163055458779427
+    },
+    "largest_absolute_change": {
+      "agent": 0.0,
+      "initial_specialization": 0.2580757856369018,
+      "final_specialization": 0.2525375664234161,
+      "delta_specialization": 1.0,
+      "pct_specialization_change": -2.14596623229025
+    },
+    "system_summary": [
+      {
+        "agents": 16,
+        "epoch": 0,
+        "max_normalized_gate_entropy": 0.9999854564666748,
+        "mean_dominant_probability": 0.2582980174571275,
+        "mean_effective_experts": 3.998576793074608,
+        "mean_modal_expert_fraction": 1.0,
+        "mean_normalized_gate_entropy": 0.999743252247572,
+        "min_normalized_gate_entropy": 0.9989242911338806,
+        "split": "validation",
+        "std_normalized_gate_entropy": 0.0002632371824964
+      },
+      {
+        "agents": 16,
+        "epoch": 1,
+        "max_normalized_gate_entropy": 0.9999922752380372,
+        "mean_dominant_probability": 0.260730767250061,
+        "mean_effective_experts": 3.9970575958490375,
+        "mean_modal_expert_fraction": 1.0,
+        "mean_normalized_gate_entropy": 0.9994687139987946,
+        "min_normalized_gate_entropy": 0.9964502692222597,
+        "split": "train",
+        "std_normalized_gate_entropy": 0.0008487851571623
+      },
+      {
+        "agents": 16,
+        "epoch": 1,
+        "max_normalized_gate_entropy": 0.999991285800934,
+        "mean_dominant_probability": 0.2606719244271517,
+        "mean_effective_experts": 3.997062566876412,
+        "mean_modal_expert_fraction": 0.9625,
+        "mean_normalized_gate_entropy": 0.9994696006178856,
+        "min_normalized_gate_entropy": 0.9964329838752748,
+        "split": "validation",
+        "std_normalized_gate_entropy": 0.0008518543476024
+      },
+      {
+        "agents": 16,
+        "epoch": 2,
+        "max_normalized_gate_entropy": 0.9999908089637756,
+        "mean_dominant_probability": 0.2612493801862001,
+        "mean_effective_experts": 3.996579679846763,
+        "mean_modal_expert_fraction": 1.0,
+        "mean_normalized_gate_entropy": 0.9993823915719986,
+        "min_normalized_gate_entropy": 0.9962719202041626,
+        "split": "train",
+        "std_normalized_gate_entropy": 0.0009089874292588
+      },
+      {
+        "agents": 16,
+        "epoch": 2,
+        "max_normalized_gate_entropy": 0.999990952014923,
+        "mean_dominant_probability": 0.2611733134835958,
+        "mean_effective_experts": 3.996585655212402,
+        "mean_modal_expert_fraction": 0.9875,
+        "mean_normalized_gate_entropy": 0.9993834614753724,
+        "min_normalized_gate_entropy": 0.9962533235549926,
+        "split": "validation",
+        "std_normalized_gate_entropy": 0.0009117911505165
+      },
+      {
+        "agents": 16,
+        "epoch": 3,
+        "max_normalized_gate_entropy": 0.9999935507774352,
+        "mean_dominant_probability": 0.2609928138554096,
+        "mean_effective_experts": 3.996500405669212,
+        "mean_modal_expert_fraction": 1.0,
+        "mean_normalized_gate_entropy": 0.9993681766092776,
+        "min_normalized_gate_entropy": 0.9973899722099304,
+        "split": "train",
+        "std_normalized_gate_entropy": 0.0008235903972989
+      },
+      {
+        "agents": 16,
+        "epoch": 3,
+        "max_normalized_gate_entropy": 0.9999930381774902,
+        "mean_dominant_probability": 0.2609636425971985,
+        "mean_effective_experts": 3.996506080031395,
+        "mean_modal_expert_fraction": 0.9875,
+        "mean_normalized_gate_entropy": 0.9993692003190516,
+        "min_normalized_gate_entropy": 0.9973748445510864,
+        "split": "validation",
+        "std_normalized_gate_entropy": 0.0008246092164546
+      },
+      {
+        "agents": 16,
+        "epoch": 4,
+        "max_normalized_gate_entropy": 0.999994421005249,
+        "mean_dominant_probability": 0.2620391838252545,
+        "mean_effective_experts": 3.995646467804909,
+        "mean_modal_expert_fraction": 0.9375,
+        "mean_normalized_gate_entropy": 0.9992133893072606,
+        "min_normalized_gate_entropy": 0.9951250314712524,
+        "split": "train",
+        "std_normalized_gate_entropy": 0.0012878641397697
+      },
+      {
+        "agents": 16,
+        "epoch": 4,
+        "max_normalized_gate_entropy": 0.999994111061096,
+        "mean_dominant_probability": 0.2619608882814646,
+        "mean_effective_experts": 3.995662987232208,
+        "mean_modal_expert_fraction": 0.95,
+        "mean_normalized_gate_entropy": 0.9992163680493832,
+        "min_normalized_gate_entropy": 0.9951036930084228,
+        "split": "validation",
+        "std_normalized_gate_entropy": 0.0012906921969739
+      },
+      {
+        "agents": 16,
+        "epoch": 5,
+        "max_normalized_gate_entropy": 0.9999928832054138,
+        "mean_dominant_probability": 0.2622137114405631,
+        "mean_effective_experts": 3.995602825284004,
+        "mean_modal_expert_fraction": 0.9625,
+        "mean_normalized_gate_entropy": 0.9992058336734772,
+        "min_normalized_gate_entropy": 0.9965677857398988,
+        "split": "test",
+        "std_normalized_gate_entropy": 0.0010829626044384
+      },
+      {
+        "agents": 16,
+        "epoch": 5,
+        "max_normalized_gate_entropy": 0.9999942302703856,
+        "mean_dominant_probability": 0.262243103608489,
+        "mean_effective_experts": 3.995578247308731,
+        "mean_modal_expert_fraction": 0.975,
+        "mean_normalized_gate_entropy": 0.9992013782262802,
+        "min_normalized_gate_entropy": 0.996552324295044,
+        "split": "train",
+        "std_normalized_gate_entropy": 0.0010888639246007
+      },
+      {
+        "agents": 16,
+        "epoch": 5,
+        "max_normalized_gate_entropy": 0.9999939560890198,
+        "mean_dominant_probability": 0.2621630989015102,
+        "mean_effective_experts": 3.995597672462464,
+        "mean_modal_expert_fraction": 0.95,
+        "mean_normalized_gate_entropy": 0.9992048934102058,
+        "min_normalized_gate_entropy": 0.9965338826179504,
+        "split": "validation",
+        "std_normalized_gate_entropy": 0.0010877651187469
+      }
+    ],
+    "temporal_summary": {
+      "agent_id": {
+        "initial": 0.0,
+        "final": 15.0,
+        "delta": 15.0,
+        "min": 0.0,
+        "max": 15.0
+      },
+      "delta_dominant_probability": {
+        "initial": -0.002979302406311,
+        "final": 0.0034187316894531,
+        "delta": 0.0063980340957641,
+        "min": -0.0214578211307525,
+        "max": 0.026038509607315
+      },
+      "delta_effective_experts": {
+        "initial": 0.0007323741912843,
+        "final": -0.001912498474121,
+        "delta": -0.0026448726654053,
+        "min": -0.0182906150817871,
+        "max": 0.010973882675171
+      },
+      "delta_normalized_gate_entropy": {
+        "initial": 0.0001321196556092,
+        "final": -0.0003455042839051,
+        "delta": -0.0004776239395143,
+        "min": -0.0033072590827941,
+        "max": 0.0019823789596558
+      },
+      "dominant_expert_changed": {
+        "initial": 1.0,
+        "final": 0.0,
+        "delta": -1.0,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "epoch_from": {
+        "initial": 0.0,
+        "final": 4.0,
+        "delta": 4.0,
+        "min": 0.0,
+        "max": 4.0
+      },
+      "epoch_to": {
+        "initial": 1.0,
+        "final": 5.0,
+        "delta": 4.0,
+        "min": 1.0,
+        "max": 5.0
+      },
+      "modal_expert_from": {
+        "initial": 3.0,
+        "final": 3.0,
+        "delta": 0.0,
+        "min": 0.0,
+        "max": 3.0
+      },
+      "modal_expert_to": {
+        "initial": 1.0,
+        "final": 3.0,
+        "delta": 2.0,
+        "min": 0.0,
+        "max": 3.0
+      }
+    }
+  },
+  "influence": {
+    "largest_gain": {
+      "agent": 5.0,
+      "initial_influence": 0.4275821208953857,
+      "final_influence": 0.677812659740448,
+      "delta_influence": 0.2502305388450623,
+      "pct_influence_change": 58.522217514863044
+    },
+    "largest_loss": {
+      "agent": 13.0,
+      "initial_influence": 0.7869741559028626,
+      "final_influence": 0.2709520190954208,
+      "delta_influence": -0.5160221368074418,
+      "pct_influence_change": -65.57040443284076
+    },
+    "agents": [
+      {
+        "agent": 0.0,
+        "initial_influence": 0.6286084532737732,
+        "final_influence": 0.3969787001609802,
+        "delta_influence": -0.23162975311279305,
+        "pct_influence_change": -36.8480175388149
+      },
+      {
+        "agent": 1.0,
+        "initial_influence": 0.3492884635925293,
+        "final_influence": 0.413232696056366,
+        "delta_influence": 0.06394423246383668,
+        "pct_influence_change": 18.30699812016475
+      },
+      {
+        "agent": 2.0,
+        "initial_influence": 0.2088277965784072,
+        "final_influence": 0.2913229659199715,
+        "delta_influence": 0.08249516934156428,
+        "pct_influence_change": 39.50392174472346
+      },
+      {
+        "agent": 3.0,
+        "initial_influence": 0.2707741022109985,
+        "final_influence": 0.2214860796928405,
+        "delta_influence": -0.049288022518158,
+        "pct_influence_change": -18.202635376019348
+      },
+      {
+        "agent": 4.0,
+        "initial_influence": 0.3765484094619751,
+        "final_influence": 0.434633719921112,
+        "delta_influence": 0.058085310459136896,
+        "pct_influence_change": 15.425721899112817
+      },
+      {
+        "agent": 5.0,
+        "initial_influence": 0.4275821208953857,
+        "final_influence": 0.677812659740448,
+        "delta_influence": 0.2502305388450623,
+        "pct_influence_change": 58.522217514863044
+      },
+      {
+        "agent": 6.0,
+        "initial_influence": 0.19754598736763,
+        "final_influence": 0.3659844204783439,
+        "delta_influence": 0.1684384331107139,
+        "pct_influence_change": 85.26542875166209
+      },
+      {
+        "agent": 7.0,
+        "initial_influence": 0.2977725833654404,
+        "final_influence": 0.4060237288475036,
+        "delta_influence": 0.10825114548206322,
+        "pct_influence_change": 36.35363076701134
+      },
+      {
+        "agent": 8.0,
+        "initial_influence": 0.1676090031862259,
+        "final_influence": 0.3752047061920166,
+        "delta_influence": 0.20759570300579072,
+        "pct_influence_change": 123.85713121575972
+      },
+      {
+        "agent": 9.0,
+        "initial_influence": 0.9979016423225404,
+        "final_influence": 0.6166340053081513,
+        "delta_influence": -0.38126763701438915,
+        "pct_influence_change": -38.20693551791514
+      },
+      {
+        "agent": 10.0,
+        "initial_influence": 0.3576985239982605,
+        "final_influence": 0.5875970959663391,
+        "delta_influence": 0.2298985719680786,
+        "pct_influence_change": 64.27160207381695
+      },
+      {
+        "agent": 11.0,
+        "initial_influence": 0.4127779245376587,
+        "final_influence": 0.4996985077857971,
+        "delta_influence": 0.0869205832481384,
+        "pct_influence_change": 21.057468939380847
+      },
+      {
+        "agent": 12.0,
+        "initial_influence": 0.2265502482652664,
+        "final_influence": 0.2201027750968933,
+        "delta_influence": -0.006447473168373102,
+        "pct_influence_change": -2.84593515908391
+      },
+      {
+        "agent": 13.0,
+        "initial_influence": 0.7869741559028626,
+        "final_influence": 0.2709520190954208,
+        "delta_influence": -0.5160221368074418,
+        "pct_influence_change": -65.57040443284076
+      },
+      {
+        "agent": 14.0,
+        "initial_influence": 0.5161766886711121,
+        "final_influence": 0.2060254901647567,
+        "delta_influence": -0.3101511985063554,
+        "pct_influence_change": -60.086246689061895
+      },
+      {
+        "agent": 15.0,
+        "initial_influence": 0.2012447476387024,
+        "final_influence": 0.176173198223114,
+        "delta_influence": -0.025071549415588396,
+        "pct_influence_change": -12.458237896772198
+      }
+    ],
+    "dominant_transition_count": 25,
+    "dominant_transitions": [
+      {
+        "batch_index": 0,
+        "delta_hhi": 0.0052602395400204,
+        "delta_max_influence": -0.0128413674880491,
+        "delta_normalized_entropy": -0.0044967945733956,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 8,
+        "dominant_agent_to": 13,
+        "epoch_from": 0,
+        "epoch_to": 1
+      },
+      {
+        "batch_index": 0,
+        "delta_hhi": -0.0114096360176463,
+        "delta_max_influence": 0.0030264266595375,
+        "delta_normalized_entropy": 0.0234222459045272,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 13,
+        "dominant_agent_to": 8,
+        "epoch_from": 1,
+        "epoch_to": 2
+      },
+      {
+        "batch_index": 0,
+        "delta_hhi": 0.0036902701748714,
+        "delta_max_influence": 0.0138568100978463,
+        "delta_normalized_entropy": 0.0011444051111764,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 8,
+        "dominant_agent_to": 15,
+        "epoch_from": 2,
+        "epoch_to": 3
+      },
+      {
+        "batch_index": 0,
+        "delta_hhi": -0.0012382713538273,
+        "delta_max_influence": -0.0361124569838648,
+        "delta_normalized_entropy": -0.0071594312148167,
+        "dominant_agent_changed": 0,
+        "dominant_agent_from": 15,
+        "dominant_agent_to": 15,
+        "epoch_from": 3,
+        "epoch_to": 4
+      },
+      {
+        "batch_index": 0,
+        "delta_hhi": 0.0072133132013275,
+        "delta_max_influence": 0.029105078508036,
+        "delta_normalized_entropy": -0.0106084474294857,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 15,
+        "dominant_agent_to": 12,
+        "epoch_from": 4,
+        "epoch_to": 5
+      },
+      {
+        "batch_index": 1,
+        "delta_hhi": -0.0037114327395458,
+        "delta_max_influence": -0.0440860851392437,
+        "delta_normalized_entropy": 0.0050182510894453,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 8,
+        "dominant_agent_to": 14,
+        "epoch_from": 0,
+        "epoch_to": 1
+      },
+      {
+        "batch_index": 1,
+        "delta_hhi": -0.006594574187152,
+        "delta_max_influence": 0.0084428815202561,
+        "delta_normalized_entropy": 0.0182112559739465,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 14,
+        "dominant_agent_to": 8,
+        "epoch_from": 1,
+        "epoch_to": 2
+      },
+      {
+        "batch_index": 1,
+        "delta_hhi": 0.0113313076079272,
+        "delta_max_influence": 0.0446187044708841,
+        "delta_normalized_entropy": -0.0204363400586521,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 8,
+        "dominant_agent_to": 15,
+        "epoch_from": 2,
+        "epoch_to": 3
+      },
+      {
+        "batch_index": 1,
+        "delta_hhi": 0.0054555959752853,
+        "delta_max_influence": -0.0319596954557871,
+        "delta_normalized_entropy": -0.023874349630328,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 15,
+        "dominant_agent_to": 11,
+        "epoch_from": 3,
+        "epoch_to": 4
+      },
+      {
+        "batch_index": 1,
+        "delta_hhi": -0.0034735436349121,
+        "delta_max_influence": -0.0073062429184405,
+        "delta_normalized_entropy": 0.0150337280431155,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 11,
+        "dominant_agent_to": 14,
+        "epoch_from": 4,
+        "epoch_to": 5
+      },
+      {
+        "batch_index": 2,
+        "delta_hhi": -0.0084711114821198,
+        "delta_max_influence": -0.0254991809838075,
+        "delta_normalized_entropy": 0.0339658016553811,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 8,
+        "dominant_agent_to": 14,
+        "epoch_from": 0,
+        "epoch_to": 1
+      },
+      {
+        "batch_index": 2,
+        "delta_hhi": -0.0007016295430365,
+        "delta_max_influence": 0.0216090345637805,
+        "delta_normalized_entropy": 0.0014809412911078,
+        "dominant_agent_changed": 0,
+        "dominant_agent_from": 14,
+        "dominant_agent_to": 14,
+        "epoch_from": 1,
+        "epoch_to": 2
+      },
+      {
+        "batch_index": 2,
+        "delta_hhi": 0.0044394207316826,
+        "delta_max_influence": -0.0108342967069724,
+        "delta_normalized_entropy": -0.0241480477742804,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 14,
+        "dominant_agent_to": 15,
+        "epoch_from": 2,
+        "epoch_to": 3
+      },
+      {
+        "batch_index": 2,
+        "delta_hhi": -0.0081564264427104,
+        "delta_max_influence": -0.0092509704303299,
+        "delta_normalized_entropy": 0.0336210413041652,
+        "dominant_agent_changed": 0,
+        "dominant_agent_from": 15,
+        "dominant_agent_to": 15,
+        "epoch_from": 3,
+        "epoch_to": 4
+      },
+      {
+        "batch_index": 2,
+        "delta_hhi": 0.0062009883613384,
+        "delta_max_influence": -0.0035421986715891,
+        "delta_normalized_entropy": -0.0212085403676915,
+        "dominant_agent_changed": 0,
+        "dominant_agent_from": 15,
+        "dominant_agent_to": 15,
+        "epoch_from": 4,
+        "epoch_to": 5
+      },
+      {
+        "batch_index": 3,
+        "delta_hhi": 0.014762425069667,
+        "delta_max_influence": 0.076560983855016,
+        "delta_normalized_entropy": -0.0218269472880244,
+        "dominant_agent_changed": 0,
+        "dominant_agent_from": 6,
+        "dominant_agent_to": 6,
+        "epoch_from": 0,
+        "epoch_to": 1
+      },
+      {
+        "batch_index": 3,
+        "delta_hhi": -0.0094326748314223,
+        "delta_max_influence": -0.0611295725773116,
+        "delta_normalized_entropy": 0.0105702839220096,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 6,
+        "dominant_agent_to": 7,
+        "epoch_from": 1,
+        "epoch_to": 2
+      },
+      {
+        "batch_index": 3,
+        "delta_hhi": 0.0040697613860167,
+        "delta_max_influence": 0.0062209666678951,
+        "delta_normalized_entropy": -0.0063286195172452,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 7,
+        "dominant_agent_to": 6,
+        "epoch_from": 2,
+        "epoch_to": 3
+      },
+      {
+        "batch_index": 3,
+        "delta_hhi": -0.0065448037748609,
+        "delta_max_influence": -0.0083255018820876,
+        "delta_normalized_entropy": 0.0153228636231739,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 6,
+        "dominant_agent_to": 15,
+        "epoch_from": 3,
+        "epoch_to": 4
+      },
+      {
+        "batch_index": 3,
+        "delta_hhi": 0.0165271616000277,
+        "delta_max_influence": 0.0345186405457841,
+        "delta_normalized_entropy": -0.0412899639162909,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 15,
+        "dominant_agent_to": 6,
+        "epoch_from": 4,
+        "epoch_to": 5
+      },
+      {
+        "batch_index": 4,
+        "delta_hhi": -0.0002440940560879,
+        "delta_max_influence": -0.0013235602111737,
+        "delta_normalized_entropy": 0.0048709846930952,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 8,
+        "dominant_agent_to": 13,
+        "epoch_from": 0,
+        "epoch_to": 1
+      },
+      {
+        "batch_index": 4,
+        "delta_hhi": -0.012155818273991,
+        "delta_max_influence": -0.0257277081954965,
+        "delta_normalized_entropy": 0.0341396981863887,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 13,
+        "dominant_agent_to": 7,
+        "epoch_from": 1,
+        "epoch_to": 2
+      },
+      {
+        "batch_index": 4,
+        "delta_hhi": 0.00861264061614,
+        "delta_max_influence": 0.0443420981109668,
+        "delta_normalized_entropy": -0.0257303207416195,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 7,
+        "dominant_agent_to": 15,
+        "epoch_from": 2,
+        "epoch_to": 3
+      },
+      {
+        "batch_index": 4,
+        "delta_hhi": 0.0108763982891377,
+        "delta_max_influence": -0.0165761287667268,
+        "delta_normalized_entropy": -0.0253345622354674,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 15,
+        "dominant_agent_to": 11,
+        "epoch_from": 3,
+        "epoch_to": 4
+      },
+      {
+        "batch_index": 4,
+        "delta_hhi": -0.0074696531921487,
+        "delta_max_influence": -0.0162432382332517,
+        "delta_normalized_entropy": 0.0134091585634505,
+        "dominant_agent_changed": 1,
+        "dominant_agent_from": 11,
+        "dominant_agent_to": 12,
+        "epoch_from": 4,
+        "epoch_to": 5
+      }
+    ],
+    "system_distribution": {
+      "batch_index": {
+        "initial": 0.0,
+        "final": 4.0,
+        "delta": 4.0,
+        "min": 0.0,
+        "max": 4.0
+      },
+      "coefficient_of_variation": {
+        "initial": 0.6901013986904997,
+        "final": 0.6588079441619832,
+        "delta": -0.03129345452851651,
+        "min": 0.4916479796367246,
+        "max": 0.8529092188104094
+      },
+      "dominant_agent": {
+        "initial": 8.0,
+        "final": 12.0,
+        "delta": 4.0,
+        "min": 0.0,
+        "max": 15.0
+      },
+      "effective_number_of_agents": {
+        "initial": 12.411602649748067,
+        "final": 12.537429700248412,
+        "delta": 0.12582705050034448,
+        "min": 11.010998909139763,
+        "max": 13.917156824778786
+      },
+      "epoch": {
+        "initial": 0.0,
+        "final": 5.0,
+        "delta": 5.0,
+        "min": 0.0,
+        "max": 5.0
+      },
+      "hhi_concentration": {
+        "initial": 0.0922649962796615,
+        "final": 0.0896267442056836,
+        "delta": -0.002638252073977901,
+        "min": 0.0776073584925545,
+        "max": 0.1079658834707364
+      },
+      "influence_entropy": {
+        "initial": 2.5186317326792427,
+        "final": 2.5287185461136827,
+        "delta": 0.010086813434440067,
+        "min": 2.398894674061407,
+        "max": 2.6331223829507
+      },
+      "influence_range": {
+        "initial": 0.1629408718483727,
+        "final": 0.1156102176889593,
+        "delta": -0.0473306541594134,
+        "min": 0.1065736727921717,
+        "max": 0.195459935473546
+      },
+      "max_influence": {
+        "initial": 0.1649488784449943,
+        "final": 0.1209946101518495,
+        "delta": -0.04395426829314482,
+        "min": 0.1094718790408613,
+        "max": 0.2011996874062238
+      },
+      "min_influence": {
+        "initial": 0.0020080065966216,
+        "final": 0.0053843924628901,
+        "delta": 0.0033763858662685005,
+        "min": 0.0020080065966216,
+        "max": 0.0174655453199849
+      },
+      "n_agents": {
+        "initial": 16.0,
+        "final": 16.0,
+        "delta": 0.0,
+        "min": 16.0,
+        "max": 16.0
+      },
+      "normalized_influence_entropy": {
+        "initial": 0.9084043776404802,
+        "final": 0.91204242657054,
+        "delta": 0.0036380489300598118,
+        "min": 0.8652183624708346,
+        "max": 0.9496981509841764
+      }
+    },
+    "epoch_summary": [
+      {
+        "epoch": 0,
+        "mean_coefficient_of_variation": 0.6910233669012815,
+        "mean_effective_number_of_agents": 12.31099636883567,
+        "mean_hhi_concentration": 0.0924459073130374,
+        "mean_influence_range": 0.1491570409673884,
+        "mean_max_influence": 0.1512501601144618,
+        "mean_normalized_influence_entropy": 0.9053654669204048,
+        "samples": 5,
+        "split": "validation",
+        "std_normalized_influence_entropy": 0.0096666433637655
+      },
+      {
+        "epoch": 1,
+        "mean_coefficient_of_variation": 0.7529055315791104,
+        "mean_effective_number_of_agents": 12.012493611753952,
+        "mean_hhi_concentration": 0.0981042624580943,
+        "mean_influence_range": 0.1494296423030827,
+        "mean_max_influence": 0.1561797495536981,
+        "mean_normalized_influence_entropy": 0.8964525242097775,
+        "samples": 5,
+        "split": "train",
+        "std_normalized_influence_entropy": 0.0121959114777859
+      },
+      {
+        "epoch": 1,
+        "mean_coefficient_of_variation": 0.7070021736120042,
+        "mean_effective_number_of_agents": 12.433610118020631,
+        "mean_hhi_concentration": 0.0939651125794242,
+        "mean_influence_range": 0.1410137842444065,
+        "mean_max_influence": 0.1498123181210102,
+        "mean_normalized_influence_entropy": 0.9088717260357052,
+        "samples": 5,
+        "split": "validation",
+        "std_normalized_influence_entropy": 0.0124125366024273
+      },
+      {
+        "epoch": 2,
+        "mean_coefficient_of_variation": 0.6219854200055839,
+        "mean_effective_number_of_agents": 13.005616863886267,
+        "mean_hhi_concentration": 0.0869690219668476,
+        "mean_influence_range": 0.1440318489685583,
+        "mean_max_influence": 0.1504360823341109,
+        "mean_normalized_influence_entropy": 0.924801973947024,
+        "samples": 5,
+        "split": "train",
+        "std_normalized_influence_entropy": 0.0205965530086739
+      },
+      {
+        "epoch": 2,
+        "mean_coefficient_of_variation": 0.6084149601114326,
+        "mean_effective_number_of_agents": 13.058083185372118,
+        "mean_hhi_concentration": 0.0859062460087745,
+        "mean_influence_range": 0.1339638354906547,
+        "mean_max_influence": 0.1390565305151634,
+        "mean_normalized_influence_entropy": 0.9264366110913012,
+        "samples": 5,
+        "split": "validation",
+        "std_normalized_influence_entropy": 0.0159008614681685
+      },
+      {
+        "epoch": 3,
+        "mean_coefficient_of_variation": 0.686360948962712,
+        "mean_effective_number_of_agents": 12.417338242631898,
+        "mean_hhi_concentration": 0.0923630303254599,
+        "mean_influence_range": 0.1356960701075408,
+        "mean_max_influence": 0.1440273066549242,
+        "mean_normalized_influence_entropy": 0.9081534909314752,
+        "samples": 5,
+        "split": "train",
+        "std_normalized_influence_entropy": 0.0195004124293799
+      },
+      {
+        "epoch": 3,
+        "mean_coefficient_of_variation": 0.6890605732209351,
+        "mean_effective_number_of_agents": 12.52028264507434,
+        "mean_hhi_concentration": 0.0923349261121021,
+        "mean_influence_range": 0.1510912411968874,
+        "mean_max_influence": 0.1586973870432874,
+        "mean_normalized_influence_entropy": 0.9113368264951768,
+        "samples": 5,
+        "split": "validation",
+        "std_normalized_influence_entropy": 0.0137951261527572
+      },
+      {
+        "epoch": 4,
+        "mean_coefficient_of_variation": 0.672809267277066,
+        "mean_effective_number_of_agents": 12.587379185126608,
+        "mean_hhi_concentration": 0.0914697667943132,
+        "mean_influence_range": 0.1332574023860478,
+        "mean_max_influence": 0.1422776716501706,
+        "mean_normalized_influence_entropy": 0.9125524414871152,
+        "samples": 5,
+        "split": "train",
+        "std_normalized_influence_entropy": 0.0290051304274549
+      },
+      {
+        "epoch": 4,
+        "mean_coefficient_of_variation": 0.6870625568380561,
+        "mean_effective_number_of_agents": 12.48169983751166,
+        "mean_hhi_concentration": 0.092413424650707,
+        "mean_influence_range": 0.1302444777321335,
+        "mean_max_influence": 0.1382524363395281,
+        "mean_normalized_influence_entropy": 0.9098519388645224,
+        "samples": 5,
+        "split": "validation",
+        "std_normalized_influence_entropy": 0.0230097845497614
+      },
+      {
+        "epoch": 5,
+        "mean_coefficient_of_variation": 0.7285540888472581,
+        "mean_effective_number_of_agents": 12.205397639837107,
+        "mean_hhi_concentration": 0.0959568249292847,
+        "mean_influence_range": 0.1561129512456013,
+        "mean_max_influence": 0.1609156349931134,
+        "mean_normalized_influence_entropy": 0.90220867766682,
+        "samples": 5,
+        "split": "test",
+        "std_normalized_influence_entropy": 0.0117653498604152
+      },
+      {
+        "epoch": 5,
+        "mean_coefficient_of_variation": 0.7086033047811862,
+        "mean_effective_number_of_agents": 12.283031884134816,
+        "mean_hhi_concentration": 0.0942451393815387,
+        "mean_influence_range": 0.1437698721488672,
+        "mean_max_influence": 0.151346791622402,
+        "mean_normalized_influence_entropy": 0.9040892513226966,
+        "samples": 5,
+        "split": "train",
+        "std_normalized_influence_entropy": 0.0227150748996183
+      },
+      {
+        "epoch": 5,
+        "mean_coefficient_of_variation": 0.7309900692452207,
+        "mean_effective_number_of_agents": 12.168780368281414,
+        "mean_hhi_concentration": 0.0962130779178336,
+        "mean_influence_range": 0.1373473825428291,
+        "mean_max_influence": 0.1455588441856359,
+        "mean_normalized_influence_entropy": 0.900919125843142,
+        "samples": 5,
+        "split": "validation",
+        "std_normalized_influence_entropy": 0.0180971974938996
+      }
+    ],
+    "score_influence_relationship": {
+      "n_records": 480,
+      "correlation_influence_sensor_score": -0.4901682593512718,
+      "correlation_influence_physics_score": -0.2671259870246671,
+      "correlation_influence_composite_score": -0.8943148554742938,
+      "interpretation_note": "Scores are lower-is-better, while influence is higher-is-better. Therefore a negative correlation with composite score is expected by construction."
+    }
+  },
+  "communication": {
+    "inter_agent_disagreement": {
+      "agent_i": {
+        "initial": 0.0,
+        "final": 14.0,
+        "delta": 14.0,
+        "pct_change": null,
+        "min": 0.0,
+        "max": 14.0
+      },
+      "agent_j": {
+        "initial": 1.0,
+        "final": 15.0,
+        "delta": 14.0,
+        "pct_change": 1400.0,
+        "min": 1.0,
+        "max": 15.0
+      },
+      "batch_index": {
+        "initial": 0.0,
+        "final": 4.0,
+        "delta": 4.0,
+        "pct_change": null,
+        "min": 0.0,
+        "max": 4.0
+      },
+      "mean_absolute_disagreement": {
+        "initial": 0.0130850235000252,
+        "final": 0.007332048844546,
+        "delta": -0.0057529746554792,
+        "pct_change": -43.966101057962334,
+        "min": 0.000162726311828,
+        "max": 0.0383906997740268
+      },
+      "overlap_height": {
+        "initial": 40.0,
+        "final": 40.0,
+        "delta": 0.0,
+        "pct_change": 0.0,
+        "min": 16.0,
+        "max": 48.0
+      },
+      "overlap_width": {
+        "initial": 16.0,
+        "final": 16.0,
+        "delta": 0.0,
+        "pct_change": 0.0,
+        "min": 16.0,
+        "max": 48.0
+      }
+    },
+    "system_evolution": {
+      "batch_index": {
+        "initial": 0.0,
+        "final": 4.0,
+        "delta": 4.0,
+        "pct_change": null,
+        "min": 0.0,
+        "max": 4.0
+      },
+      "dominant_expert_0_count": {
+        "initial": 5.0,
+        "final": 2.0,
+        "delta": -3.0,
+        "pct_change": -60.0,
+        "min": 2.0,
+        "max": 6.0
+      },
+      "dominant_expert_1_count": {
+        "initial": 4.0,
+        "final": 5.0,
+        "delta": 1.0,
+        "pct_change": 25.0,
+        "min": 3.0,
+        "max": 6.0
+      },
+      "dominant_expert_2_count": {
+        "initial": 0.0,
+        "final": 3.0,
+        "delta": 3.0,
+        "pct_change": null,
+        "min": 0.0,
+        "max": 3.0
+      },
+      "dominant_expert_3_count": {
+        "initial": 7.0,
+        "final": 6.0,
+        "delta": -1.0,
+        "pct_change": -14.285714285714286,
+        "min": 5.0,
+        "max": 7.0
+      },
+      "global_mae": {
+        "initial": 0.0355762615799903,
+        "final": 0.0230587031692266,
+        "delta": -0.012517558410763695,
+        "pct_change": -35.185142718323554,
+        "min": 0.0155059173703193,
+        "max": 0.054144512861967
+      },
+      "global_residual": {
+        "initial": 0.0069122142158448,
+        "final": 0.0008306682575494,
+        "delta": -0.0060815459582954,
+        "pct_change": -87.98260251186562,
+        "min": 0.0003851364308502,
+        "max": 0.0089311804622411
+      },
+      "global_rmse": {
+        "initial": 0.0658905878663063,
+        "final": 0.0371412932872772,
+        "delta": -0.028749294579029104,
+        "pct_change": -43.6318683897041,
+        "min": 0.0339451842010021,
+        "max": 0.0838317424058914
+      },
+      "mean_gate_entropy": {
+        "initial": 1.385938286781311,
+        "final": 1.3851829767227173,
+        "delta": -0.00075531005859375,
+        "pct_change": -0.054498101812879014,
+        "min": 1.3851779699325562,
+        "max": 1.38594651222229
+      },
+      "mean_gate_entropy_normalized": {
+        "initial": 0.999743103981018,
+        "final": 0.999198317527771,
+        "delta": -0.0005447864532469593,
+        "pct_change": -0.0544926442680722,
+        "min": 0.9991946220397948,
+        "max": 0.9997490644454956
+      },
+      "mean_influence_entropy": {
+        "initial": 2.51863169670105,
+        "final": 2.5345354080200195,
+        "delta": 0.015903711318969727,
+        "pct_change": 0.6314425145923758,
+        "min": 2.3988945484161377,
+        "max": 2.633122444152832
+      },
+      "mean_influence_entropy_normalized": {
+        "initial": 0.9084043502807616,
+        "final": 0.9141404032707214,
+        "delta": 0.005736052989959828,
+        "pct_change": 0.631442703702044,
+        "min": 0.8652183413505554,
+        "max": 0.9496981501579284
+      },
+      "mean_max_gate_probability": {
+        "initial": 0.258306622505188,
+        "final": 0.2622781991958618,
+        "delta": 0.003971576690673828,
+        "pct_change": 1.5375435024295827,
+        "min": 0.2582383155822754,
+        "max": 0.2622969150543213
+      },
+      "mean_max_influence": {
+        "initial": 0.1649488657712936,
+        "final": 0.1242638304829597,
+        "delta": -0.04068503528833391,
+        "pct_change": -24.665241011565907,
+        "min": 0.1094718873500824,
+        "max": 0.2011996805667877
+      },
+      "number_of_agents": {
+        "initial": 16.0,
+        "final": 16.0,
+        "delta": 0.0,
+        "pct_change": 0.0,
+        "min": 16.0,
+        "max": 16.0
+      },
+      "number_of_micro_experts": {
+        "initial": 4.0,
+        "final": 4.0,
+        "delta": 0.0,
+        "pct_change": 0.0,
+        "min": 4.0,
+        "max": 4.0
+      }
+    },
+    "topology_evidence_columns": []
+  },
+  "ablation_files": []
+}

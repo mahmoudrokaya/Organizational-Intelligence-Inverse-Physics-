@@ -1,0 +1,399 @@
+====================================================================================================
+MASTER REVIEWER-REQUESTED EXPERIMENTAL RESULTS
+====================================================================================================
+Generated: 2026-08-24T08:32:06
+Project root: /home/mahmoud1/GIS/Codes/New_Branch
+Outputs root: /home/mahmoud1/GIS/Codes/New_Branch/outputs
+Destination: /home/mahmoud1/GIS/Codes/New_Branch/experiments/results_R.txt
+
+Scientific status:
+  - This file consolidates already completed experimental results.
+  - No model is retrained and no inference is recomputed.
+  - No submitted-manuscript numerical value is overwritten.
+  - Reviewer-requested experiments are reported separately from previously submitted manuscript results.
+
+====================================================================================================
+1. REVIEWER-REQUESTED BASELINE COMPARISON
+====================================================================================================
+Models:
+Model                               Params         MAE        RMSE      Residual    Latency(s)
+----------------------------------------------------------------------------------------------
+MLP 4x256                           198401    0.032392    0.055959      0.012635      0.152319
+PINN 4x256                          198401    0.032479    0.056377      0.000130      0.151891
+MoE (4 experts)                     198904    0.032614    0.055976      0.012050      0.278810
+3D FNO                              205655    0.031799    0.050133      0.017427      0.126416
+DD-PINN (4 subdomains)              198004    0.031918    0.056387      0.001173      0.662724
+
+Observed best values:
+  Lowest Test MAE: 3D FNO (0.031799)
+  Lowest Test RMSE: 3D FNO (0.050133)
+  Lowest Wave Residual: PINN 4x256 (0.000130)
+  Lowest Mean Latency: 3D FNO (0.126416 s)
+
+Original consolidated summary:
+REVIEWER-REQUESTED BASELINE COMPARISON
+========================================================================
+
+This report consolidates only completed experimental runs.
+It does not modify any numerical value in the submitted manuscript.
+
+Lowest held-out test RMSE : 3D FNO (0.050133)
+Lowest wave residual      : PINN 4x256 (0.000130)
+Lowest mean latency        : 3D FNO (0.126416 s)
+
+Per-model results:
+
+MLP 4x256: params=198401, MAE=0.032392, RMSE=0.055959, residual=0.012635, latency=0.152319s
+PINN 4x256: params=198401, MAE=0.032479, RMSE=0.056377, residual=0.000130, latency=0.151891s
+MoE (4 experts): params=198904, MAE=0.032614, RMSE=0.055976, residual=0.012050, latency=0.278810s
+3D FNO: params=205655, MAE=0.031799, RMSE=0.050133, residual=0.017427, latency=0.126416s
+DD-PINN (4 subdomains): params=198004, MAE=0.031918, RMSE=0.056387, residual=0.001173, latency=0.662724s
+
+Interpretation policy:
+No composite score is used. Reconstruction error, physics consistency, and latency remain separate experimental dimensions.
+The held-out test set is not used for checkpoint selection.
+All reported values are new reviewer-requested experimental results.
+
+Source: /home/mahmoud1/GIS/Codes/New_Branch/outputs/reviewer_baseline_comparison/baseline_comparison_full.csv
+
+====================================================================================================
+2. SACU AGENT-COUNT SCALABILITY
+====================================================================================================
+  Grid   Agents     Params    Test MAE   Test RMSE    Residual     Latency   Throughput    GPU MiB
+--------------------------------------------------------------------------------------------------
+     2        4       8512    0.033331    0.056512    0.000320    0.143659        6.961     2355.9
+     3        9      19152    0.033268    0.056538    0.000606    0.189806        5.269     1547.4
+     4       16      34048    0.032614    0.056435    0.000686    0.309895        3.227     1085.1
+     5       25      53200    0.032813    0.056490    0.000801    0.499415        2.002      844.8
+
+Observed RMSE range across tested agent counts: 0.000103
+25-agent / 4-agent latency ratio: 3.476x
+Throughput reduction from 4 to 25 agents: 71.23%
+
+Interpretation: reconstruction accuracy remains tightly clustered across the tested 4-25 SACU range, whereas latency increases and throughput decreases as agent count grows.
+GPU-memory measurements are retained for auditability but should not be interpreted as a monotonic scaling law because the memory-efficient recomputation strategy and allocator behavior affect peak-memory values.
+
+Source: /home/mahmoud1/GIS/Codes/New_Branch/outputs/scalability/final_scalability_analysis/agent_scalability_final.csv
+
+====================================================================================================
+3. SACU DOMAIN-SIZE SCALABILITY
+====================================================================================================
+      Domain  Pixels vs128     Params     Latency         P95   Throughput    GPU MiB        RMSE
+-------------------------------------------------------------------------------------------------
+       64x64         0.250      34048    0.240128    0.262267        4.164      154.2         N/A
+     128x128         1.000      34048    0.319776    0.373367        3.127      310.2    0.056435
+     256x256         4.000      34048    0.624116    0.635069        1.602      939.9         N/A
+
+128x128 -> 256x256 latency ratio: 1.952x
+128x128 -> 256x256 throughput ratio: 0.512x
+128x128 -> 256x256 GPU-memory ratio: 3.030x
+
+Predictive-metric policy: only the native 128x128 condition has simulator-generated paired targets and therefore receives MAE/RMSE/wave-residual interpretation.
+The 64x64 and 256x256 conditions are computational workloads created by deterministic resizing and must not be presented as predictive-generalization experiments.
+
+Source: /home/mahmoud1/GIS/Codes/New_Branch/outputs/scalability/final_scalability_analysis/domain_scalability_final.csv
+
+====================================================================================================
+4. SACU CONTROLLED COMMUNICATION-COST SCALABILITY
+====================================================================================================
+ Delay(ms)   Barrier(ms)    Latency(s)        P95(s)    Throughput     Pred diff
+----------------------------------------------------------------------------------
+       0.0         0.001      0.323670      0.378695         3.090     0.000e+00
+       1.0         1.083      0.334056      0.383441         2.994     0.000e+00
+       5.0         5.120      0.328900      0.385249         3.040     0.000e+00
+      10.0        10.145      0.326941      0.373874         3.059     0.000e+00
+
+Maximum numerical prediction difference: 0.000e+00
+Maximum absolute communication-barrier timing error: 0.145 ms
+
+Interpretation: controlled 0-10 ms synchronization delays were introduced faithfully at the SACU communication barrier and did not change numerical predictions.
+Because these injected delays are small relative to the approximately 0.32-s end-to-end inference time, overall latency does not form a clean monotonic trend across the four conditions.
+These values are controlled injected communication scenarios; they are NOT measurements of physical network latency.
+
+Source: /home/mahmoud1/GIS/Codes/New_Branch/outputs/scalability/final_scalability_analysis/communication_scalability_final.csv
+
+====================================================================================================
+5. FINAL SCALABILITY INTERPRETATION
+====================================================================================================
+agent_count: Accuracy remained stable over 4-25 SACUs, while latency increased and throughput declined.
+domain_size: Increasing spatial workload increased latency and memory demand and reduced throughput with the 16-agent architecture held fixed.
+communication: Controlled 0-10 ms synchronization delays were faithfully introduced without changing numerical predictions; end-to-end differences remained small relative to baseline SACU inference time.
+claim_scope: Results support empirical scalability only over the tested agent counts, spatial workloads, and controlled delay scenarios. They do not establish unbounded scalability or real network latency.
+
+Bounded reviewer-facing claim:
+  The implemented SACU framework remained operational over the tested range of 4-25 agents, 64x64-256x256 computational spatial workloads, and controlled 0-10 ms synchronization-delay scenarios.
+  Reconstruction accuracy remained stable across the tested agent counts, whereas larger organizational and spatial workloads incurred measurable computational costs.
+  These experiments support empirical scalability over the tested conditions only; they do not establish unbounded scalability.
+
+====================================================================================================
+6. OTHER COMPLETED EXPERIMENTAL SUMMARIES FOUND
+====================================================================================================
+No additional concise summary text files found.
+
+====================================================================================================
+7. RESULT FILE INVENTORY
+====================================================================================================
+Total result-like files found under outputs/: 253
+
+  outputs/audit/dataset_location_audit/all_project_files.csv
+  outputs/audit/dataset_location_audit/archives.csv
+  outputs/audit/dataset_location_audit/audit_summary.json
+  outputs/audit/dataset_location_audit/candidate_data_directories.csv
+  outputs/audit/dataset_location_audit/findings.csv
+  outputs/audit/dataset_location_audit/npz_files.csv
+  outputs/audit/dataset_location_audit/npz_locations.csv
+  outputs/audit/dataset_location_audit/npz_structure_samples.csv
+  outputs/audit/dataset_location_audit/possible_duplicate_npz.csv
+  outputs/audit/dataset_location_audit/text_references.csv
+  outputs/audit/dataset_location_audit/zip_contents.csv
+  outputs/audit/generation_and_theta_split/audit_summary.json
+  outputs/audit/generation_and_theta_split/candidate_generator_files.csv
+  outputs/audit/generation_and_theta_split/exact_theta_cross_split_overlap.csv
+  outputs/audit/generation_and_theta_split/findings.csv
+  outputs/audit/generation_and_theta_split/generation_references.csv
+  outputs/audit/generation_and_theta_split/sequence_count_candidates.csv
+  outputs/audit/generation_and_theta_split/theta_closest_cross_split_pairs.csv
+  outputs/audit/generation_and_theta_split/theta_cross_split_distance_summary.csv
+  outputs/audit/generation_and_theta_split/theta_inventory.csv
+  outputs/audit/generation_and_theta_split/theta_split_summary.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/common_config.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/environment.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/experiment_identity.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/model_config.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/results.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/split_summary.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/splits/test_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/splits/train_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/splits/validation_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/tables/summary.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/tables/test_per_sample.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/tables/training_history.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260822-064125/tables/validation_per_sample.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-010732/common_config.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-010732/environment.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-010732/experiment_identity.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-010732/model_config.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-010732/split_summary.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-010732/splits/test_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-010732/splits/train_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-010732/splits/validation_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/common_config.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/environment.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/experiment_identity.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/model_config.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/results.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/split_summary.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/splits/test_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/splits/train_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/splits/validation_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/tables/summary.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/tables/test_per_sample.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/tables/training_history.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-020810/tables/validation_per_sample.csv
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-033323/common_config.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-033323/environment.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-033323/experiment_identity.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-033323/model_config.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-033323/split_summary.json
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-033323/splits/test_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-033323/splits/train_files.txt
+  outputs/baseline_comparison/mlp_4x256/mlp_4x256_20260823-033323/splits/validation_files.txt
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/common_config.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/environment.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/experiment_identity.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/model_config.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/split_summary.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/splits/test_files.txt
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/splits/train_files.txt
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/splits/validation_files.txt
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260822-083832/tables/training_history.csv
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/common_config.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/environment.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/experiment_identity.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/model_config.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/results.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/split_summary.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/splits/test_files.txt
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/splits/train_files.txt
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/splits/validation_files.txt
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/tables/summary.csv
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/tables/test_per_sample.csv
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/tables/training_history.csv
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/tables/validation_per_sample.csv
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/test_gate_behavior.json
+  outputs/baseline_comparison/moe_4experts/moe_4experts_20260823-023937/validation_gate_behavior.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/common_config.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/environment.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/experiment_identity.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/model_config.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/results.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/split_summary.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/splits/test_files.txt
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/splits/train_files.txt
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/splits/validation_files.txt
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/tables/summary.csv
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/tables/test_per_sample.csv
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/tables/training_history.csv
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260822-074441/tables/validation_per_sample.csv
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/common_config.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/environment.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/experiment_identity.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/model_config.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/results.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/split_summary.json
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/splits/test_files.txt
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/splits/train_files.txt
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/splits/validation_files.txt
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/tables/summary.csv
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/tables/test_per_sample.csv
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/tables/training_history.csv
+  outputs/baseline_comparison/pinn_4x256/pinn_4x256_20260823-022621/tables/validation_per_sample.csv
+  outputs/core_validation/sacu_v2_20260821-181537/best_model.json
+  outputs/core_validation/sacu_v2_20260821-181537/config.json
+  outputs/core_validation/sacu_v2_20260821-181537/environment.json
+  outputs/core_validation/sacu_v2_20260821-181537/results.json
+  outputs/core_validation/sacu_v2_20260821-181537/split_summary.json
+  outputs/core_validation/sacu_v2_20260821-181537/splits/test_files.txt
+  outputs/core_validation/sacu_v2_20260821-181537/splits/train_files.txt
+  outputs/core_validation/sacu_v2_20260821-181537/splits/validation_files.txt
+  outputs/core_validation/sacu_v2_20260821-181537/tables/test_summary.csv
+  outputs/core_validation/sacu_v2_20260821-181537/tables/training_history.csv
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-133947/config.json
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-133947/split_manifest.json
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-133947/tables/split_manifest.csv
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-133947/tables/training_history.csv
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-152941/config.json
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-152941/results.json
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-152941/split_manifest.json
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-152941/tables/split_manifest.csv
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-152941/tables/summary.csv
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-152941/tables/test_per_sample.csv
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-152941/tables/training_history.csv
+  outputs/modern_baselines/dd_pinn_4subdomains/dd_pinn_4subdomains_20260823-152941/tables/validation_per_sample.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-033118/config.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-033118/split_manifest.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-033118/tables/split_manifest.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-033757/config.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-033757/split_manifest.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-033757/tables/split_manifest.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-034322/config.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-034322/split_manifest.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-034322/tables/split_manifest.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-034926/config.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-034926/split_manifest.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-034926/tables/split_manifest.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-035400/config.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-035400/results.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-035400/split_manifest.json
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-035400/tables/split_manifest.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-035400/tables/summary.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-035400/tables/test_per_sample.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-035400/tables/training_history.csv
+  outputs/modern_baselines/fno_3d_4x10/fno_3d_4x10_20260823-035400/tables/validation_per_sample.csv
+  outputs/organizational_evolution/org_evolution_20260821-191814/config.json
+  outputs/organizational_evolution/org_evolution_20260821-191814/environment.json
+  outputs/organizational_evolution/org_evolution_20260821-191814/implementation_scope.json
+  outputs/organizational_evolution/org_evolution_20260821-191814/results.json
+  outputs/organizational_evolution/org_evolution_20260821-191814/split_summary.json
+  outputs/organizational_evolution/org_evolution_20260821-191814/splits/test_files.txt
+  outputs/organizational_evolution/org_evolution_20260821-191814/splits/train_files.txt
+  outputs/organizational_evolution/org_evolution_20260821-191814/splits/validation_files.txt
+  outputs/organizational_evolution/org_evolution_20260821-191814/tables/agent_evolution.csv
+  outputs/organizational_evolution/org_evolution_20260821-191814/tables/inter_agent_disagreement.csv
+  outputs/organizational_evolution/org_evolution_20260821-191814/tables/system_evolution.csv
+  outputs/organizational_evolution/org_evolution_20260821-191814/tables/training_history.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/agent_specialization_summary.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/analysis_summary.json
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/epoch_to_epoch_specialization_changes.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/expert_utilization.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/findings.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/agent_influence_summary.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/analysis_summary.json
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/dominant_agent_transitions.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/epoch_influence_summary.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/findings.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/initial_vs_final_agent_influence.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/score_influence_relationship.json
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/influence_redistribution/system_influence_distribution.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/initial_vs_final_specialization.csv
+  outputs/organizational_evolution_analysis/org_evolution_20260821-191814/system_specialization_summary.csv
+  outputs/reviewer_baseline_comparison/baseline_comparison_full.csv
+  outputs/reviewer_baseline_comparison/baseline_comparison_full.json
+  outputs/reviewer_baseline_comparison/comparison_summary.txt
+  outputs/reviewer_baseline_comparison/reviewer_baseline_table.csv
+  outputs/scalability/agent_count_consolidated/agent_count_scaling_summary.csv
+  outputs/scalability/agent_count_consolidated/agent_count_scaling_summary.json
+  outputs/scalability/agent_count_scaling/agent_count_scaling_20260823-202045/config.json
+  outputs/scalability/agent_count_scaling/agent_count_scaling_20260823-202045/split_manifest.json
+  outputs/scalability/agent_count_scaling/agent_count_scaling_20260823-202045/tables/split_manifest.csv
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260823-214052/config.json
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260823-214052/grid_2_agents_4/results.json
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260823-214052/grid_2_agents_4/summary.csv
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260823-214052/grid_2_agents_4/training_history.csv
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260823-214052/split_manifest.json
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260823-214052/tables/split_manifest.csv
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260824-043600/config.json
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260824-043600/grid_2_agents_4/results.json
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260824-043600/grid_2_agents_4/summary.csv
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260824-043600/grid_2_agents_4/training_history.csv
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260824-043600/split_manifest.json
+  outputs/scalability/agent_count_scaling_grid_2_agents_4/agent_count_scaling_grid_2_agents_4_20260824-043600/tables/split_manifest.csv
+  outputs/scalability/agent_count_scaling_grid_3_agents_9/agent_count_scaling_grid_3_agents_9_20260823-215148/config.json
+  outputs/scalability/agent_count_scaling_grid_3_agents_9/agent_count_scaling_grid_3_agents_9_20260823-215148/grid_3_agents_9/results.json
+  outputs/scalability/agent_count_scaling_grid_3_agents_9/agent_count_scaling_grid_3_agents_9_20260823-215148/grid_3_agents_9/summary.csv
+  outputs/scalability/agent_count_scaling_grid_3_agents_9/agent_count_scaling_grid_3_agents_9_20260823-215148/grid_3_agents_9/training_history.csv
+  outputs/scalability/agent_count_scaling_grid_3_agents_9/agent_count_scaling_grid_3_agents_9_20260823-215148/split_manifest.json
+  outputs/scalability/agent_count_scaling_grid_3_agents_9/agent_count_scaling_grid_3_agents_9_20260823-215148/tables/split_manifest.csv
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-204541/config.json
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-204541/split_manifest.json
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-204541/tables/split_manifest.csv
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-211750/config.json
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-211750/grid_4_agents_16/results.json
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-211750/grid_4_agents_16/summary.csv
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-211750/grid_4_agents_16/training_history.csv
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-211750/split_manifest.json
+  outputs/scalability/agent_count_scaling_grid_4_agents_16/agent_count_scaling_grid_4_agents_16_20260823-211750/tables/split_manifest.csv
+  outputs/scalability/agent_count_scaling_grid_5_agents_25/agent_count_scaling_grid_5_agents_25_20260824-034026/config.json
+  outputs/scalability/agent_count_scaling_grid_5_agents_25/agent_count_scaling_grid_5_agents_25_20260824-034026/grid_5_agents_25/results.json
+  outputs/scalability/agent_count_scaling_grid_5_agents_25/agent_count_scaling_grid_5_agents_25_20260824-034026/grid_5_agents_25/summary.csv
+  outputs/scalability/agent_count_scaling_grid_5_agents_25/agent_count_scaling_grid_5_agents_25_20260824-034026/grid_5_agents_25/training_history.csv
+  outputs/scalability/agent_count_scaling_grid_5_agents_25/agent_count_scaling_grid_5_agents_25_20260824-034026/split_manifest.json
+  outputs/scalability/agent_count_scaling_grid_5_agents_25/agent_count_scaling_grid_5_agents_25_20260824-034026/tables/split_manifest.csv
+  outputs/scalability/communication_cost_scaling/communication_cost_scaling_20260824-051638/communication_cost_scaling.csv
+  outputs/scalability/communication_cost_scaling/communication_cost_scaling_20260824-051638/communication_cost_scaling.json
+  outputs/scalability/communication_cost_scaling/communication_cost_scaling_20260824-051638/config.json
+  outputs/scalability/communication_cost_scaling/communication_cost_scaling_20260824-051638/split_manifest.json
+  outputs/scalability/communication_cost_scaling/communication_cost_scaling_20260824-051638/tables/split_manifest.csv
+  outputs/scalability/domain_size_scaling_128x128/domain_size_scaling_128x128_20260824-050542/config.json
+  outputs/scalability/domain_size_scaling_128x128/domain_size_scaling_128x128_20260824-050542/domain_128x128/results.json
+  outputs/scalability/domain_size_scaling_128x128/domain_size_scaling_128x128_20260824-050542/domain_128x128/summary.csv
+  outputs/scalability/domain_size_scaling_128x128/domain_size_scaling_128x128_20260824-050542/split_manifest.json
+  outputs/scalability/domain_size_scaling_128x128/domain_size_scaling_128x128_20260824-050542/tables/split_manifest.csv
+  outputs/scalability/domain_size_scaling_256x256/domain_size_scaling_256x256_20260824-050619/config.json
+  outputs/scalability/domain_size_scaling_256x256/domain_size_scaling_256x256_20260824-050619/domain_256x256/results.json
+  outputs/scalability/domain_size_scaling_256x256/domain_size_scaling_256x256_20260824-050619/domain_256x256/summary.csv
+  outputs/scalability/domain_size_scaling_256x256/domain_size_scaling_256x256_20260824-050619/split_manifest.json
+  outputs/scalability/domain_size_scaling_256x256/domain_size_scaling_256x256_20260824-050619/tables/split_manifest.csv
+  outputs/scalability/domain_size_scaling_64x64/domain_size_scaling_64x64_20260824-050310/config.json
+  outputs/scalability/domain_size_scaling_64x64/domain_size_scaling_64x64_20260824-050310/domain_64x64/results.json
+  outputs/scalability/domain_size_scaling_64x64/domain_size_scaling_64x64_20260824-050310/domain_64x64/summary.csv
+  outputs/scalability/domain_size_scaling_64x64/domain_size_scaling_64x64_20260824-050310/split_manifest.json
+  outputs/scalability/domain_size_scaling_64x64/domain_size_scaling_64x64_20260824-050310/tables/split_manifest.csv
+  outputs/scalability/final_scalability_analysis/agent_scalability_final.csv
+  outputs/scalability/final_scalability_analysis/communication_scalability_final.csv
+  outputs/scalability/final_scalability_analysis/domain_scalability_final.csv
+  outputs/scalability/final_scalability_analysis/reviewer_scalability_results.md
+  outputs/scalability/final_scalability_analysis/reviewer_scalability_table.csv
+  outputs/scalability/final_scalability_analysis/scalability_analysis_master.json
+  outputs/scalability/final_scalability_analysis/scalability_summary.txt
+  outputs/scalability/protocol_inventory/sacu_implementation_candidates.csv
+  outputs/scalability/protocol_inventory/sacu_implementation_candidates.json
+
+====================================================================================================
+8. CONSOLIDATION STATUS
+====================================================================================================
+PASS: completed experimental outputs were collected without rerunning training or inference.
+PASS: finalized reviewer-requested baseline-comparison results were included when available.
+PASS: finalized agent-count, domain-size, and communication-cost scalability results were included.
+PASS: unsupported predictive metrics for resized spatial workloads were not created.
+PASS: no submitted-manuscript numerical value was modified.
