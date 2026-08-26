@@ -1,0 +1,29 @@
+{
+  "experiment": "reviewer_requested_organizational_evolution_analysis",
+  "new_experiment": true,
+  "replaces_existing_manuscript_numbers": false,
+  "best_validation_epoch": 1,
+  "best_validation_rmse": 0.0654217168688774,
+  "test_metrics_of_this_new_experiment": {
+    "mae": 0.03312436702350775,
+    "rmse": 0.05674645751714706,
+    "residual": 0.0006650935198801259
+  },
+  "measured_organizational_quantities": [
+    "influence_weights",
+    "gate_probabilities",
+    "dominant_micro_expert",
+    "gate_entropy",
+    "influence_entropy",
+    "sensor_consistency",
+    "local_physics_score",
+    "inter_agent_prediction_disagreement"
+  ],
+  "not_claimed_as_dynamic": [
+    "role_reallocation",
+    "role_switch_events",
+    "learned_communication_edge_weights",
+    "communication_topology_changes"
+  ],
+  "important_methodological_note": "All influence weights used in this experiment were computed without y_true. Ground truth was used only after prediction for supervised training loss and evaluation metrics."
+}

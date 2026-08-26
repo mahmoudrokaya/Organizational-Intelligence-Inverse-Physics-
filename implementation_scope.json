@@ -1,0 +1,19 @@
+{
+  "measured_dynamically": [
+    "influence_weights",
+    "gate_probabilities",
+    "dominant_micro_expert",
+    "gate_entropy",
+    "influence_entropy",
+    "sensor_consistency",
+    "local_physics_score",
+    "inter_agent_prediction_disagreement"
+  ],
+  "not_dynamically_implemented_in_current_solver": [
+    "role_reallocation",
+    "role_switch_events",
+    "learned_communication_edge_weights",
+    "communication_topology_changes"
+  ],
+  "reason": "The current OrgSACUSolver assigns role IDs deterministically from agent index and uses a fixed neighbor graph. These quantities are therefore not reported as dynamic empirical results."
+}
